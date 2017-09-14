@@ -16,10 +16,10 @@ public class Juego {
 		}else {
 			Carta c1 = j1.tomarCarta();
 			Carta c2 = j2.tomarCarta();
-			//isMenor(c1.getAtributo(a),c2.getAtributo(a)) ? j2.sumarCartas(c1,c2) : j1.sumarCartas(c1,c2);
-			if (c1.isMenor(a,c2.getAtributo(a))) {
+			//c1.isMenor(a,c2) ? j2.sumarCartas(c1,c2) : j1.sumarCartas(c1,c2);
+			if (c1.isMenor(a,c2)) {
 				j2.addCartas(c1,c2);				
-			}else if (c2.isMenor(a,c1.getAtributo(a))) {
+			}else if (c2.isMenor(a,c1)) {
 				j1.addCartas(c1,c2);
 			}else {
 				j1.addCarta(c1);
@@ -27,7 +27,7 @@ public class Juego {
 			}
 		}
 		if (Ganador() != null) {
-			println("gano el jugador "+ Ganador().getNombre());
+			System.out.println("gano el jugador "+ Ganador().getNombre());
 		}
 	}
 	public Jugador Ganador() {
