@@ -17,10 +17,14 @@ public class Jugador {
 		return cartasJugador.vacio();
 	}
 	public void addCarta(Carta c1) {
-		cartasJugador.add(c1);
+		cartasJugador.addCarta(c1);
 	}
 	public void addCartas(Carta c1, Carta c2) {
 		this.addCarta(c1);
 		this.addCarta(c2);
+	}
+	public Atributo elegirAtributo(Carta c) {
+		Atributo a = c.atributoAzar();
+		return a;
 	}
 }

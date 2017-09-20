@@ -21,4 +21,7 @@ public class Atributo {
 	public boolean equals(Atributo a) {
 		return (this.nombre == a.getNombre());
 	}
+	public boolean isMenor(Atributo a) {
+		return this.valor<a.getValor();
+	}
 }

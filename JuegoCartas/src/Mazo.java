@@ -1,11 +1,17 @@
 import java.util.*;
 public class Mazo {
-	ArrayList mazo;
+	ArrayList<Carta> mazo;
 	public Mazo() {
 		mazo = new ArrayList<Carta>();
 	}
 	public void addCarta(Carta c) {
-		mazo.add(c);
+		if (this.vacio()) {
+			mazo.add(c);
+		}else if (c.equals(mazo.get(0))) {
+			mazo.add(c);
+		}else {
+			System.out.println("Carta Invalida");
+		}		
 	}
 	public Carta tomarPrimera() {
 		if (!mazo.isEmpty()){
@@ -29,5 +35,8 @@ public class Mazo {
 			j2.addCarta(mazo.get(i));
 			i++;
 		}
+	}
+	public boolean vacio() {
+		return mazo.isEmpty();
 	}
 }
