@@ -16,13 +16,5 @@ public class main {
 		maso.addCarta(segunda);
 		Juego partida = new Juego("lucho","pc",maso);
 		partida.jugar();
-		maso.vaciarMazo();
-		partida.jugar();
-		Mazo nuevoMazo = new Mazo();
-		nuevoMazo.addCarta(primera);
-		nuevoMazo.addCarta(segunda);
-		partida.cambiarMazo(nuevoMazo);
-		partida.jugar();
 	}
-
 }

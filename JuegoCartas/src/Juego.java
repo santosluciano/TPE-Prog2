@@ -17,8 +17,8 @@ public class Juego {
 		turno = 1;
 	}
 	public void jugar() {
-		if (!mazocartas.vacio()){
-			mazocartas.repartir(j1,j2);
+		mazocartas.repartir(j1,j2);
+		if (j1.hayCartas()&&j2.hayCartas()){
 			while (Ganador() == null) {
 				Carta c1 = j1.tomarCarta();			
 				Carta c2 = j2.tomarCarta();
@@ -41,7 +41,7 @@ public class Juego {
 			}
 			System.out.println("gano el jugador "+ Ganador().getNombre());
 		}else {
-			System.out.println("El mazo no tiene cartas");			
+			System.out.println("Imposible jugar con este mazo");			
 		}
 	}
 	public Jugador Ganador() {

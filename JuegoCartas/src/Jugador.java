@@ -14,7 +14,7 @@ public class Jugador {
 		return c;
 	}
 	public boolean hayCartas() {
-		return cartasJugador.vacio();
+		return !cartasJugador.vacio();
 	}
 	public void addCarta(Carta c1) {
 		cartasJugador.addCarta(c1);
