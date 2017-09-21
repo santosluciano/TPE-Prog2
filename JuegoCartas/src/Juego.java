@@ -4,6 +4,12 @@ public class Juego {
 	private Jugador j2;
 	private int turno;
 	private Mazo mazocartas;
+	public Juego(String n1, String n2) {
+		j1 = new Jugador(n1);
+		j2 = new Jugador(n2);
+		this.mazocartas = new Mazo();
+		turno = 1;
+	}
 	public Juego(String n1, String n2, Mazo mazocartas) {
 		j1 = new Jugador(n1);
 		j2 = new Jugador(n2);
@@ -48,5 +54,8 @@ public class Juego {
 	}
 	public int getTurno() {
 		return turno;
+	}
+	public void cambiarMazo(Mazo nuevoMazo) {
+		this.mazocartas = nuevoMazo;
 	}
 }
