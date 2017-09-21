@@ -1,23 +1,26 @@
 
 public class Jugador {
-	String nombre;
-	Mazo cartasJugador;
+	private String nombre;
+	private Mazo cartasJugador;
 	public Jugador(String n) {
-		nombre = n;
-		cartasJugador = new Mazo();
+		this.nombre = n;
+		this.cartasJugador = new Mazo();
 	}
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
+	}
+	public void setNombre(String n) {
+		this.nombre = n;
 	}
 	public Carta tomarCarta() {
-		Carta c = cartasJugador.tomarPrimera();
+		Carta c = this.cartasJugador.tomarPrimera();
 		return c;
 	}
 	public boolean hayCartas() {
-		return !cartasJugador.vacio();
+		return !this.cartasJugador.vacio();
 	}
 	public void addCarta(Carta c1) {
-		cartasJugador.addCarta(c1);
+		this.cartasJugador.addCarta(c1);
 	}
 	public void addCartas(Carta c1, Carta c2) {
 		this.addCarta(c1);

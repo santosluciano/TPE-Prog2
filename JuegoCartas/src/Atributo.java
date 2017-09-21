@@ -1,19 +1,19 @@
 
 public class Atributo {
-	String nombre;
-	int valor;
+	private String nombre;
+	private int valor;
 	public Atributo(String n,int v) {
-		nombre = n;
-		valor = v;
+		this.nombre = n;
+		this.valor = v;
 	}
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	public int getValor() {
-		return valor;
+		return this.valor;
 	}
 	public void setValor(int valor) {
 		this.valor = valor;

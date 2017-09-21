@@ -5,55 +5,55 @@ public class Juego {
 	private int turno;
 	private Mazo mazocartas;
 	public Juego(String n1, String n2) {
-		j1 = new Jugador(n1);
-		j2 = new Jugador(n2);
+		this.j1 = new Jugador(n1);
+		this.j2 = new Jugador(n2);
 		this.mazocartas = new Mazo();
-		turno = 1;
+		this.turno = 1;
 	}
 	public Juego(String n1, String n2, Mazo mazocartas) {
-		j1 = new Jugador(n1);
-		j2 = new Jugador(n2);
+		this.j1 = new Jugador(n1);
+		this.j2 = new Jugador(n2);
 		this.mazocartas = mazocartas;
-		turno = 1;
+		this.turno = 1;
 	}
 	public void jugar() {
-		mazocartas.repartir(j1,j2);
-		if (j1.hayCartas()&&j2.hayCartas()){
+		this.mazocartas.repartir(j1,j2);
+		if (this.j1.hayCartas()&&this.j2.hayCartas()){
 			while (Ganador() == null) {
-				Carta c1 = j1.tomarCarta();			
-				Carta c2 = j2.tomarCarta();
+				Carta c1 = this.j1.tomarCarta();			
+				Carta c2 = this.j2.tomarCarta();
 				Atributo a;
-				if (turno==1) {
-					a = j1.elegirAtributo(c1);
+				if (this.turno==1) {
+					a = this.j1.elegirAtributo(c1);
 				}else {	
-					a = j2.elegirAtributo(c2);
+					a = this.j2.elegirAtributo(c2);
 				}
 				if (c1.isMenor(a,c2)) {
-					j2.addCartas(c1,c2);
-					turno = 2;
+					this.j2.addCartas(c1,c2);
+					this.turno = 2;
 				}else if (c2.isMenor(a,c1)) {
-					j1.addCartas(c1,c2);
-					turno = 1;
+					this.j1.addCartas(c1,c2);
+					this.turno = 1;
 				}else {
-					j1.addCarta(c1);
-					j2.addCarta(c2);
+					this.j1.addCarta(c1);
+					this.j2.addCarta(c2);
 				}
 			}
-			System.out.println("gano el jugador "+ Ganador().getNombre());
+			System.out.println("gano el jugador "+ this.Ganador().getNombre());
 		}else {
 			System.out.println("Imposible jugar con este mazo");			
 		}
 	}
 	public Jugador Ganador() {
-		if (j1.hayCartas() && !j2.hayCartas()) {
-			return j1;
-		} else if (!j1.hayCartas() && j2.hayCartas()) {
-			return j2;
+		if (this.j1.hayCartas() && !this.j2.hayCartas()) {
+			return this.j1;
+		} else if (!this.j1.hayCartas() && this.j2.hayCartas()) {
+			return this.j2;
 		} else
 			return null;
 	}
 	public int getTurno() {
-		return turno;
+		return this.turno;
 	}
 	public void cambiarMazo(Mazo nuevoMazo) {
 		this.mazocartas = nuevoMazo;

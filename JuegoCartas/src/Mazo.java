@@ -1,22 +1,22 @@
 import java.util.*;
 public class Mazo {
-	ArrayList<Carta> mazo;
+	private ArrayList<Carta> mazo;
 	public Mazo() {
-		mazo = new ArrayList<Carta>();
+		this.mazo = new ArrayList<Carta>();
 	}
 	public void addCarta(Carta c) {
 		if (this.vacio()) {
-			mazo.add(c);
-		}else if (c.equals(mazo.get(0))) {
-			mazo.add(c);
+			this.mazo.add(c);
+		}else if (c.equals(this.mazo.get(0))) {
+			this.mazo.add(c);
 		}else {
 			System.out.println("Carta Invalida");
 		}		
 	}
 	public Carta tomarPrimera() {
-		if (!mazo.isEmpty()){
-			Carta c = mazo.get(0);
-			mazo.remove(0);
+		if (!this.mazo.isEmpty()){
+			Carta c = this.mazo.get(0);
+			this.mazo.remove(0);
 			return c;
 		}else
 			return null;
@@ -30,14 +30,14 @@ public class Mazo {
 			tamaño = this.mazo.size();
 		}
 		while (i < tamaño) {
-			j1.addCarta(mazo.get(i));
+			j1.addCarta(this.mazo.get(i));
 			i++;
-			j2.addCarta(mazo.get(i));
+			j2.addCarta(this.mazo.get(i));
 			i++;
 		}
 	}
 	public boolean vacio() {
-		return mazo.isEmpty();
+		return this.mazo.isEmpty();
 	}
 	public void vaciarMazo() {
 		this.mazo.clear();
