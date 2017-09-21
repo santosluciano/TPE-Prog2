@@ -11,28 +11,32 @@ public class Juego {
 		turno = 1;
 	}
 	public void jugar() {
-		mazocartas.repartir(j1,j2);
-		while (Ganador() == null) {
-			Carta c1 = j1.tomarCarta();			
-			Carta c2 = j2.tomarCarta();
-			Atributo a;
-			if (turno==1) {
-				a = j1.elegirAtributo(c1);
-			}else {	
-				a = j2.elegirAtributo(c2);
+		if (!mazocartas.vacio()){
+			mazocartas.repartir(j1,j2);
+			while (Ganador() == null) {
+				Carta c1 = j1.tomarCarta();			
+				Carta c2 = j2.tomarCarta();
+				Atributo a;
+				if (turno==1) {
+					a = j1.elegirAtributo(c1);
+				}else {	
+					a = j2.elegirAtributo(c2);
+				}
+				if (c1.isMenor(a,c2)) {
+					j2.addCartas(c1,c2);
+					turno = 2;
+				}else if (c2.isMenor(a,c1)) {
+					j1.addCartas(c1,c2);
+					turno = 1;
+				}else {
+					j1.addCarta(c1);
+					j2.addCarta(c2);
+				}
 			}
-			if (c1.isMenor(a,c2)) {
-				j2.addCartas(c1,c2);
-				turno = 2;
-			}else if (c2.isMenor(a,c1)) {
-				j1.addCartas(c1,c2);
-				turno = 1;
-			}else {
-				j1.addCarta(c1);
-				j2.addCarta(c2);
-			}
+			System.out.println("gano el jugador "+ Ganador().getNombre());
+		}else {
+			System.out.println("El mazo no tiene cartas");			
 		}
-		System.out.println("gano el jugador "+ Ganador().getNombre());
 	}
 	public Jugador Ganador() {
 		if (j1.hayCartas() && !j2.hayCartas()) {

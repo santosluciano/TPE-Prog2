@@ -39,4 +39,7 @@ public class Mazo {
 	public boolean vacio() {
 		return mazo.isEmpty();
 	}
+	public void vaciarMazo() {
+		this.mazo.clear();
+	}
 }
