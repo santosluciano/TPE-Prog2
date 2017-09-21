@@ -4,7 +4,7 @@ public class Carta {
 	private String nombre;
 	private ArrayList<Atributo> atributos;
 	public Carta(String n){
-		this.nombre = n;
+		this.nombre = n;		
 		atributos = new ArrayList<Atributo>(); 
 	}
 	public boolean isMenor(Atributo a,Carta c){
@@ -16,7 +16,7 @@ public class Carta {
 	}	
 	public Atributo atributoAzar() {
 		int i= (int) (Math.random() * (this.cantidadAtributos()-1));
-		return atributos.get(i);
+		return getAtributo(i);
 	}
 	protected void add(Atributo a) {
 		atributos.add(a);

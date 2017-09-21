@@ -24,7 +24,6 @@ public class Jugador {
 		this.addCarta(c2);
 	}
 	public Atributo elegirAtributo(Carta c) {
-		Atributo a = c.atributoAzar();
-		return a;
+		return c.atributoAzar();
 	}
 }

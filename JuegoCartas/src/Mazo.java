@@ -24,10 +24,10 @@ public class Mazo {
 	public void repartir(Jugador j1,Jugador j2) {
 		int tamaño;
 		int i = 0;
-		if (mazo.size()%2 != 0) {
-			tamaño = mazo.size() - 1;
+		if (this.mazo.size()%2 != 0) {
+			tamaño = this.mazo.size() - 1;
 		}else {
-			tamaño = mazo.size();
+			tamaño = this.mazo.size();
 		}
 		while (i < tamaño) {
 			j1.addCarta(mazo.get(i));

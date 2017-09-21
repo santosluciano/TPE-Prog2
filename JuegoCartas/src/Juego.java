@@ -4,10 +4,10 @@ public class Juego {
 	private Jugador j2;
 	private int turno;
 	private Mazo mazocartas;
-	public Juego(String n1, String n2) {
+	public Juego(String n1, String n2, Mazo mazocartas) {
 		j1 = new Jugador(n1);
 		j2 = new Jugador(n2);
-		mazocartas = new Mazo();
+		this.mazocartas = mazocartas;
 		turno = 1;
 	}
 	public void jugar() {
@@ -18,7 +18,7 @@ public class Juego {
 			Atributo a;
 			if (turno==1) {
 				a = j1.elegirAtributo(c1);
-			}else {
+			}else {	
 				a = j2.elegirAtributo(c2);
 			}
 			if (c1.isMenor(a,c2)) {
