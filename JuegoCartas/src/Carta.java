@@ -9,7 +9,8 @@ public class Carta {
 	}
 	public boolean isMenor(Atributo a,Carta c){
 		int i = 0;
-		while (i<this.cantidadAtributos()&&this.atributos.get(i).equals(a)) {
+		// En este while faltaba el "!"
+		while (i<this.cantidadAtributos()&&!this.atributos.get(i).equals(a)) {
 			i++;
 		}
 		return this.atributos.get(i).getValor()<c.getAtributo(i).getValor();
@@ -43,5 +44,13 @@ public class Carta {
 	}
 	public int cantidadAtributos() {
 		return this.atributos.size();
+	}
+	public int consultarValorAtributo(Atributo a){ //Método que se puede borrar despues
+			  									  // Para consultar el valor desde "Juego".
+	int i = 0;
+	while (i<this.cantidadAtributos()&&!atributos.get(i).equals(a)) {
+		i++;
+	}
+	return this.atributos.get(i).getValor();
 	}
 }

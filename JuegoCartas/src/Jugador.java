@@ -29,4 +29,8 @@ public class Jugador {
 	public Atributo elegirAtributo(Carta c) {
 		return c.atributoAzar();
 	}
+	public int CantidadCartas(){ // Para consultar desde "juego" la cantidad de cartas de cada uno.
+		// Se puede borrar despues
+		return cartasJugador.getTamañoMazo();
+}
 }

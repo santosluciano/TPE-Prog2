@@ -28,6 +28,12 @@ public class Juego {
 				}else {	
 					a = this.j2.elegirAtributo(c2);
 				}
+				System.out.println("La carta de " + j1.getNombre() + " es " + c1.getNombre());
+				System.out.println("La carta de " + j2.getNombre() + " es " + c2.getNombre());
+				System.out.println("El atributo a comparar es " + a.getNombre());
+				System.out.println(a.getNombre() + " J1: " + c1.consultarValorAtributo(a));
+				System.out.println(a.getNombre() + " J2: " + c2.consultarValorAtributo(a));
+				
 				if (c1.isMenor(a,c2)) {
 					this.j2.addCartas(c1,c2);
 					this.turno = 2;
@@ -38,6 +44,9 @@ public class Juego {
 					this.j1.addCarta(c1);
 					this.j2.addCarta(c2);
 				}
+				
+				System.out.println("El jugador uno tiene " + j1.CantidadCartas() + " cartas");
+				System.out.println("El jugador dos tiene " + j2.CantidadCartas() + " cartas");
 			}
 			System.out.println("gano el jugador "+ this.Ganador().getNombre());
 		}else {

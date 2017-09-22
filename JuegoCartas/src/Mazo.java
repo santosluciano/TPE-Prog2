@@ -42,4 +42,9 @@ public class Mazo {
 	public void vaciarMazo() {
 		this.mazo.clear();
 	}
+	public int getTamañoMazo(){ // Para consultar desde "juego" la cantidad de cartas de cada uno.
+		   // Se consulta desde "Jugador" con otro metodo.
+		  // Se puede borrar despues.
+		return mazo.size();
+}
 }
