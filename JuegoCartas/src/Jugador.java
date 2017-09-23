@@ -22,7 +22,7 @@ public class Jugador {
 	public void addCarta(Carta c1) {
 		this.cartasJugador.addCarta(c1);
 	}
-	public void addCartas(Carta c1, Carta c2) {
+	public void addCartas(Carta c1, Carta c2) { //eliminar
 		this.addCarta(c1);
 		this.addCarta(c2);
 	}

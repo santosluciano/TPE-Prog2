@@ -34,7 +34,7 @@ public class Juego {
 				System.out.println(a.getNombre() + " J1: " + c1.consultarValorAtributo(a));
 				System.out.println(a.getNombre() + " J2: " + c2.consultarValorAtributo(a));
 				
-				if (c1.isMenor(a,c2)) {
+				if (c1.isMenor(a,c2)) { //se puede mover al atributo
 					this.j2.addCartas(c1,c2);
 					this.turno = 2;
 				}else if (c2.isMenor(a,c1)) {
