@@ -49,7 +49,7 @@ public class JuegoCartas {
 		maso.setNombreMazo(nombreMazo);
 		
 		System.out.println("Este juego se hara con el mazo: " + maso.getNombreMazo());
-		Juego partida = new Juego("Lucho","Agu",maso);
+		Juego partida = new JuegoTurnos("Lucho","Agu",maso,2);
 		partida.jugar();
 
 

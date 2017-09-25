@@ -61,8 +61,7 @@ public class Mazo {
 			for (int i=0; i<getTamañoMazo();i++) {
 				
 				System.out.println("Nombre Carta: " + this.mazo.get(i).getNombre());
-				this.mazo.get(i).imprimirAtributos();
-				
+				this.mazo.get(i).imprimirAtributos();				
 
 				
 			}

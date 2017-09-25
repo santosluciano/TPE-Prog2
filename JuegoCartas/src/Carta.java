@@ -21,7 +21,7 @@ public class Carta {
 		while (i<this.getCantidadAtributos()&&!this.atributos.get(i).equals(a)) {
 			i++;
 		}
-		return this.atributos.get(i).getValor()<c.getAtributo(i).getValor();
+		return this.atributos.get(i).isMenor(c.getAtributo(i));
 	}	
 	public Atributo atributoAzar() {
 		int i= (int) (Math.random() * (this.getCantidadAtributos()-1));
@@ -63,11 +63,11 @@ public class Carta {
 	}
 	public int consultarValorAtributo(Atributo a){ //Método que se puede borrar despues
 			  									  // Para consultar el valor desde "Juego".
-	int i = 0;
-	while (i<this.getCantidadAtributos()&&!atributos.get(i).equals(a)) {
+		int i = 0;
+		while (i<this.getCantidadAtributos()&&!atributos.get(i).equals(a)) {
 		i++;
 	}
-	return this.atributos.get(i).getValor();
+		return this.atributos.get(i).getValor();
 	}
 	
 	public void imprimirAtributos(){ // Por si se quieren ver todos los atributos y valores que tiene
