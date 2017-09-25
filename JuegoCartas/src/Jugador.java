@@ -22,10 +22,8 @@ public class Jugador {
 	public void addCarta(Carta c1) {
 		this.cartasJugador.addCarta(c1);
 	}
-	public void addCartas(Carta c1, Carta c2) { //eliminar
-		this.addCarta(c1);
-		this.addCarta(c2);
-	}
+	// Eliminado el método addCartas... era innecesario... 
+	// Me dijeron que es mejor llamar dos veces a add carta... ya esta corregido en "juego"
 	public Atributo elegirAtributo(Carta c) {
 		return c.atributoAzar();
 	}
