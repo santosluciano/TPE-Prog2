@@ -1,11 +1,19 @@
 import java.util.*;
 public class Mazo {
+	private String nombreMazo;
 	private ArrayList<Carta> mazo;
 	public Mazo() {
 		this.mazo = new ArrayList<Carta>();
 	}
+	
+	public void setNombreMazo(String nombreMazo){
+		this.nombreMazo=nombreMazo;
+	}
+	public String getNombreMazo(){
+		return nombreMazo;
+	}
 	public void addCarta(Carta c) {
-		if (this.vacio()) {
+		if (this.vacio()&&c.getCantidadAtributos()>=3) {
 			this.mazo.add(c);
 		}else if (c.equals(this.mazo.get(0))) {
 			this.mazo.add(c);
@@ -48,7 +56,7 @@ public class Mazo {
 		return mazo.size();
 }
 	
-	public void imprimirTodoelMazo(){
+	public void imprimirTodoelMazo(){ // Por si se quieren ver todas las cartas que hay
 			
 			for (int i=0; i<getTamañoMazo();i++) {
 				
@@ -59,4 +67,27 @@ public class Mazo {
 				
 			}
 	}
+	
+	public void barajar() {   // Abre metodo barajar
+	 
+	 for ( int carta = 0; carta < mazo.size(); carta++ ){ // Abre for
+	 
+		 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
+		 Carta temp = mazo.get(carta);
+		 
+		 mazo.set(carta, mazo.get(segundaCarta));
+		 mazo.set(segundaCarta, temp);
+
+	 
+	 }  
+	}   
+
+	public ArrayList<Carta> getMazo() {
+		return mazo;
+	}
+
+	public void setMazo(ArrayList<Carta> mazo) {
+		this.mazo = mazo;
+	}
+	
 }

@@ -30,7 +30,7 @@ public class Carta {
 	protected void addAtributo(Atributo a) {// modifique el nombre "add" por "addAtributo" para especificar.
 		
 			
-		if (atributos.size() <= cantidadAtributos) {
+		if (atributos.size() <= cantidadAtributos && (cantidadAtributos>=3 && cantidadAtributos<=6)) {
 			this.atributos.add(a);
 		}
 		else {
@@ -70,7 +70,7 @@ public class Carta {
 	return this.atributos.get(i).getValor();
 	}
 	
-	public void imprimirAtributos(){
+	public void imprimirAtributos(){ // Por si se quieren ver todos los atributos y valores que tiene
 		
 		for (int i=0; i<getCantidadAtributos();i++) {
 			

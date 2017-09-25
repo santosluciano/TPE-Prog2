@@ -6,28 +6,31 @@ public class Main { //modifique y puse la clase "Main" con "M" en mayuscula...
 
 	public static void main(String[] args) {
 
-		int opcion = 0;
+		int cantidadCartas = 0;
 		int primero = 0;
 		int segundo = 0;
 		int tercero = 0;
+		String nombreMazo = "";
 		String nombreCarta = "";
 		
-		System.out.println("Cuantas cartas tiene el mazo? ");
-		opcion = obtnerValor();
+		System.out.println("¿Cuantas cartas tiene el mazo? ");
+		cantidadCartas = obtnerValor();
 		
 		Mazo maso = new Mazo();
-		for (int i=0;i<opcion;i++) {
-			
+		for (int i=0;i<cantidadCartas;i++) {
+
+			System.out.println("Nombre de la Carta: ");
 			nombreCarta = obtenerNombreCarta();
 				
 			System.out.println("Fuerza: ");
-				
 			primero = obtnerValor();
 			Atributo a = new Atributo("Fuerza",primero);
 
+			System.out.println("Velocidad: ");
 			segundo = obtnerValor();
 			Atributo b = new Atributo("Velocidad",segundo);
 
+			System.out.println("Mental: ");
 			tercero = obtnerValor();
 			Atributo c = new Atributo("Mental",tercero);
 			
@@ -40,6 +43,12 @@ public class Main { //modifique y puse la clase "Main" con "M" en mayuscula...
 			
 			maso.addCarta(nuevaCarta);
 		}
+		
+		System.out.println("¿Cual es el nombre del mazo creado? ");
+		nombreMazo = obtenerNombreCarta();
+		maso.setNombreMazo(nombreMazo);
+		
+		System.out.println("Este juego se hara con el mazo: " + maso.getNombreMazo());
 		Juego partida = new Juego("Lucho","Agu",maso);
 		partida.jugar();
 
@@ -54,7 +63,6 @@ public class Main { //modifique y puse la clase "Main" con "M" en mayuscula...
 		do {
 			
 			 try {
-				 System.out.println("Nombre de la Carta: ");
 				 nombreCarta = entrada.readLine();
 				 nombreValido=true;
 				}

@@ -17,6 +17,9 @@ public class Juego {
 		this.turno = 1;
 	}
 	public void jugar() {
+		this.mazocartas.barajar();
+		this.mazocartas.barajar();
+
 		this.mazocartas.repartir(j1,j2);
 		if (this.j1.hayCartas()&&this.j2.hayCartas()){
 			while (Ganador() == null) {
