@@ -47,4 +47,16 @@ public class Mazo {
 		  // Se puede borrar despues.
 		return mazo.size();
 }
+	
+	public void imprimirTodoelMazo(){
+			
+			for (int i=0; i<getTamañoMazo();i++) {
+				
+				System.out.println("Nombre Carta: " + this.mazo.get(i).getNombre());
+				this.mazo.get(i).imprimirAtributos();
+				
+
+				
+			}
+	}
 }

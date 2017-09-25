@@ -36,8 +36,6 @@ public class Carta {
 		else {
 			System.out.println("No se pueden agregar mas atributos");
 		}
-		System.out.println("La funcion get da: "+getCantidadAtributos());
-		System.out.println("La funcion size da: "+ atributos.size());
 	}
 	public Atributo getAtributo(int i) {
 		return this.atributos.get(i);
@@ -70,5 +68,18 @@ public class Carta {
 		i++;
 	}
 	return this.atributos.get(i).getValor();
+	}
+	
+	public void imprimirAtributos(){
+		
+		for (int i=0; i<getCantidadAtributos();i++) {
+			
+			System.out.println("Nombre Atributo: " + this.atributos.get(i).getNombre());
+			System.out.println("Valor Atributo: " + this.atributos.get(i).getValor());
+
+			
+		}
+		
+		
 	}
 }
