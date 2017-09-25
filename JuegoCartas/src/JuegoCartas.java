@@ -1,8 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main { //modifique y puse la clase "Main" con "M" en mayuscula...
-				   // Desaparecio un error que me aparecia con el public static void main...
+public class JuegoCartas { 
+
 
 	public static void main(String[] args) {
 

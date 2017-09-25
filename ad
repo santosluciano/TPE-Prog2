@@ -1,0 +1,101 @@
+[33mcommit 4395f20c679e7c9260ca3f9335ee20aa068bff2c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Mon Sep 25 13:12:24 2017 -0300
+
+    emprolijado el Main y otras versiones comentadas (no funcionales aun)
+
+[33mcommit 2281629b306687d82c6a517f2b46e40603e9b096[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Mon Sep 25 11:05:30 2017 -0300
+
+    modificado el main - Correciones generales
+
+[33mcommit 36f5e950ed78e7724278f6a02a65e9c32ef2ad59[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Sat Sep 23 04:12:30 2017 -0300
+
+    correcciones para hacer!!! Eliminar clases abstractas de carta
+
+[33mcommit 15a586b2bf017de81ae9d93b3a0006ac9d27c4ad[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Thu Sep 21 21:50:38 2017 -0300
+
+    Correccion del manejo de excepciones
+
+[33mcommit a29895650c29f7ab0faccaf469615e83750ceb9e[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Thu Sep 21 21:13:30 2017 -0300
+
+    eliminado el provisorio
+
+[33mcommit b8ff649abdce113421d2ab8a9d944101f21cce21[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Thu Sep 21 21:07:25 2017 -0300
+
+    Agregado los carteles. Se puede borrar el provisorio
+
+[33mcommit 1f1ba7f0697859e6d11f59ff5d0b2c5ede718a13[m
+Author: Meliendrez Agustin <ameliendrez@gmail.com>
+Date:   Thu Sep 21 20:55:28 2017 -0300
+
+    Version 2
+
+[33mcommit 48b92f4ff5c3471c5fb8abb44da142a2365b5ddf[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 18:39:08 2017 -0300
+
+    main emprolijado, clases con this
+
+[33mcommit 192c7158572e218f17b00259d354b452da48cb6c[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 17:25:49 2017 -0300
+
+    Agregadas clases Carta4-5-6
+
+[33mcommit ae8fdcb51861f386096cd0c3976d8724d1cc814a[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 17:19:11 2017 -0300
+
+    Solucionado problema de maso con una carta
+
+[33mcommit ccaef527320127571ac534c3bf5c757813423ec5[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 17:02:12 2017 -0300
+
+    Funcion para poder cambiar el mazo
+
+[33mcommit 6d854a465d3b90c28b7fdfe4dee38583601e9e23[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 16:56:59 2017 -0300
+
+    Solucion a tener mazo vacio
+
+[33mcommit 80f03be41f140914648926c6238c28d0fede3dfc[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 21 16:52:06 2017 -0300
+
+    Anda para un mazo de dos cartas
+
+[33mcommit 00c6a1270b15e2a07b1db823fb8aab8c596d9f21[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Wed Sep 20 11:52:22 2017 -0300
+
+    clases creadas - da error el elegirAtributo
+
+[33mcommit ec61b24b84de8c61a6e9209bd5727ec4fd29b8b2[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 14 16:55:22 2017 -0300
+
+    Sigue faltando la clase carta
+
+[33mcommit 163f101831ed98eb094a96d661775c73fe8aea11[m
+Author: Luciano Santos <luchosan74@gmail.com>
+Date:   Thu Sep 14 12:47:32 2017 -0300
+
+    Falta clase carta
+
+[33mcommit a3a1203ec277155ae739db19f438bdd025a52812[m
+Author: santosluciano <31427143+santosluciano@users.noreply.github.com>
+Date:   Thu Sep 14 12:40:57 2017 -0300
+
+    Initial commit
