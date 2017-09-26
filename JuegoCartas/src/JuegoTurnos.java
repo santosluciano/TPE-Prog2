@@ -2,11 +2,6 @@
 public class JuegoTurnos extends Juego{
 	private int cantTurnos;
 	private int turnoActual;
-	public JuegoTurnos(String n1, String n2,int cantTurnos) {
-		super(n1,n2);
-		this.cantTurnos = cantTurnos;
-		this.turnoActual = 0;
-	}
 	public JuegoTurnos(String n1, String n2,Mazo mazocartas,int cantTurnos){
 		super(n1,n2,mazocartas);
 		this.cantTurnos = cantTurnos;

@@ -4,12 +4,6 @@ public class Juego {
 	private Jugador j2;
 	private int turno;
 	private Mazo mazocartas;
-	public Juego(String n1, String n2) {
-		this.j1 = new Jugador(n1);
-		this.j2 = new Jugador(n2);
-		this.mazocartas = new Mazo();
-		this.turno = 1;
-	}
 	public Juego(String n1, String n2, Mazo mazocartas) {
 		this.j1 = new Jugador(n1);
 		this.j2 = new Jugador(n2);
@@ -68,11 +62,8 @@ public class Juego {
 		System.out.println("La carta de " + j2.getNombre() + " es " + c2.getNombre());
 		System.out.println("El atributo a comparar es " + a.getNombre());
 		System.out.println(a.getNombre() + " J1: " + c1.consultarValorAtributo(a));
-		System.out.println(a.getNombre() + " J2: " + c2.consultarValorAtributo(a));
-		
-		if (c1.isMenor(a,c2)) { //se puede mover al atributo
-			
-			//modificado el addCarta-addCartas... ver en "jugador"
+		System.out.println(a.getNombre() + " J2: " + c2.consultarValorAtributo(a));		
+		if (c1.isMenor(a,c2)) { 			
 			this.j2.addCarta(c1); 
 			this.j2.addCarta(c2);
 			this.turno = 2;
@@ -83,8 +74,7 @@ public class Juego {
 		}else {
 			this.j1.addCarta(c1);
 			this.j2.addCarta(c2);
-		}
-		
+		}		
 		System.out.println("El jugador uno tiene " + j1.CantidadCartas() + " cartas");
 		System.out.println("El jugador dos tiene " + j2.CantidadCartas() + " cartas");
 	}

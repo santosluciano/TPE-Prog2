@@ -3,21 +3,20 @@ import java.util.*;
 public class Carta {
 	private String nombre;
 	private ArrayList<Atributo> atributos;
-	private int cantidadAtributos; // agregue la cantidad de atributos para controlar el tamaño
-								  // del Array List --- Modificado el "add"
+	private int cantidadAtributos; 
 	public Carta(int cantidadAtributos){ // Cuando creas la de carta ya lo delimitas.
 		//this.nombre = nombre; String nombre
 		this.cantidadAtributos = cantidadAtributos;
-		this.atributos = new ArrayList<Atributo>(); 
+		this.atributos = new ArrayList<Atributo>(); //delimitar atributos de carta. multiples constructores o funcion
 	}
-	
 	public void setNombre (String nombre) {
 		this.nombre = nombre;
 	}
-	
+	public boolean cartaCargada() {
+		return cantidadAtributos==this.getCantidadAtributos();
+	}
 	public boolean isMenor(Atributo a,Carta c){
 		int i = 0;
-		// En este while faltaba el "!"
 		while (i<this.getCantidadAtributos()&&!this.atributos.get(i).equals(a)) {
 			i++;
 		}
@@ -27,10 +26,8 @@ public class Carta {
 		int i= (int) (Math.random() * (this.getCantidadAtributos()-1));
 		return this.getAtributo(i);
 	}
-	protected void addAtributo(Atributo a) {// modifique el nombre "add" por "addAtributo" para especificar.
-		
-			
-		if (atributos.size() <= cantidadAtributos && (cantidadAtributos>=3 && cantidadAtributos<=6)) {
+	protected void addAtributo(Atributo a) {
+		if (atributos.size() <= cantidadAtributos) {
 			this.atributos.add(a);
 		}
 		else {
@@ -57,9 +54,8 @@ public class Carta {
 			return false;
 		}
 	}
-	public int getCantidadAtributos() {  //this.atributos.size() ahora no es necesario... 
-		
-		return cantidadAtributos;
+	public int getCantidadAtributos() { 		
+		return this.atributos.size();
 	}
 	public int consultarValorAtributo(Atributo a){ //Método que se puede borrar despues
 			  									  // Para consultar el valor desde "Juego".

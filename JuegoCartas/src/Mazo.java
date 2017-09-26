@@ -4,8 +4,7 @@ public class Mazo {
 	private ArrayList<Carta> mazo;
 	public Mazo() {
 		this.mazo = new ArrayList<Carta>();
-	}
-	
+	}	
 	public void setNombreMazo(String nombreMazo){
 		this.nombreMazo=nombreMazo;
 	}
@@ -13,7 +12,7 @@ public class Mazo {
 		return nombreMazo;
 	}
 	public void addCarta(Carta c) {
-		if (this.vacio()&&c.getCantidadAtributos()>=3&&c.getCantidadAtributos()<=6) {
+		if (this.vacio()&&c.cartaCargada()) {
 			this.mazo.add(c);
 		}else if (c.equals(this.mazo.get(0))) {
 			this.mazo.add(c);
@@ -50,13 +49,10 @@ public class Mazo {
 	public void vaciarMazo() {
 		this.mazo.clear();
 	}
-	public int getTamañoMazo(){ // Para consultar desde "juego" la cantidad de cartas de cada uno.
-		   // Se consulta desde "Jugador" con otro metodo.
-		  // Se puede borrar despues.
+	public int getTamañoMazo(){
 		return mazo.size();
 }
-	
-	public void imprimirTodoelMazo(){ // Por si se quieren ver todas las cartas que hay
+	public void imprimirTodoelMazo(){ 
 			
 			for (int i=0; i<getTamañoMazo();i++) {
 				
@@ -66,20 +62,14 @@ public class Mazo {
 				
 			}
 	}
-	
-	public void barajar() {   // Abre metodo barajar
+	public void barajar() {   
 	 if (mazo.size()>1) {
-		 for ( int carta = 0; carta < mazo.size(); carta++ ){ // Abre for
-	 
+		 for ( int carta = 0; carta < mazo.size(); carta++ ){	 
 			 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
-			 Carta temp = mazo.get(carta);
-		 
+			 Carta temp = mazo.get(carta);		 
 			 mazo.set(carta, mazo.get(segundaCarta));
-			 mazo.set(segundaCarta, temp);
-
-	 
+			 mazo.set(segundaCarta, temp);	 
 		 }
 	 }
-	} 
-
+	}
 }

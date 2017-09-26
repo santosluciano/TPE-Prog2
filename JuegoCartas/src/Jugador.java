@@ -22,13 +22,10 @@ public class Jugador {
 	public void addCarta(Carta c1) {
 		this.cartasJugador.addCarta(c1);
 	}
-	// Eliminado el método addCartas... era innecesario... 
-	// Me dijeron que es mejor llamar dos veces a add carta... ya esta corregido en "juego"
 	public Atributo elegirAtributo(Carta c) {
 		return c.atributoAzar();
 	}
-	public int CantidadCartas(){ // Para consultar desde "juego" la cantidad de cartas de cada uno.
-		// Se puede borrar despues
+	public int CantidadCartas(){ 
 		return cartasJugador.getTamañoMazo();
 }
 }
