@@ -13,7 +13,7 @@ public class Mazo {
 		return nombreMazo;
 	}
 	public void addCarta(Carta c) {
-		if (this.vacio()&&c.getCantidadAtributos()>=3) {
+		if (this.vacio()&&c.getCantidadAtributos()>=3&&c.getCantidadAtributos()<=6) {
 			this.mazo.add(c);
 		}else if (c.equals(this.mazo.get(0))) {
 			this.mazo.add(c);
@@ -68,25 +68,18 @@ public class Mazo {
 	}
 	
 	public void barajar() {   // Abre metodo barajar
+	 if (mazo.size()>1) {
+		 for ( int carta = 0; carta < mazo.size(); carta++ ){ // Abre for
 	 
-	 for ( int carta = 0; carta < mazo.size(); carta++ ){ // Abre for
-	 
-		 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
-		 Carta temp = mazo.get(carta);
+			 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
+			 Carta temp = mazo.get(carta);
 		 
-		 mazo.set(carta, mazo.get(segundaCarta));
-		 mazo.set(segundaCarta, temp);
+			 mazo.set(carta, mazo.get(segundaCarta));
+			 mazo.set(segundaCarta, temp);
 
 	 
-	 }  
-	}   
+		 }
+	 }
+	} 
 
-	public ArrayList<Carta> getMazo() {
-		return mazo;
-	}
-
-	public void setMazo(ArrayList<Carta> mazo) {
-		this.mazo = mazo;
-	}
-	
 }

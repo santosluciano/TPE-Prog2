@@ -1,9 +1,9 @@
 
-public abstract class Juego {
-	protected Jugador j1;
-	protected Jugador j2;
-	protected int turno;
-	protected Mazo mazocartas;
+public class Juego {
+	private Jugador j1;
+	private Jugador j2;
+	private int turno;
+	private Mazo mazocartas;
 	public Juego(String n1, String n2) {
 		this.j1 = new Jugador(n1);
 		this.j2 = new Jugador(n2);
@@ -16,20 +16,44 @@ public abstract class Juego {
 		this.mazocartas = mazocartas;
 		this.turno = 1;
 	}
-	public abstract void jugar(); 
+	public void jugar() {
+		this.prepararPartida();
+		if (jugadoresAptos()){
+			while (!hayGanador()) {
+				jugarMano();
+			}
+		if (Ganador() == null) {
+			System.out.println("empataron");
+		}else {
+			System.out.println("gano el jugador "+ this.Ganador().getNombre());
+		}
+		}else {
+			System.out.println("Imposible jugar con este mazo");			
+		}
+	}
+	public boolean hayGanador() {
+		return !(this.jugadoresAptos());
+	}
+	private void prepararPartida() {
+		this.mazocartas.barajar();
+		this.mazocartas.repartir(j1,j2);
+	}
 	public Jugador Ganador() {
-		if (this.j1.hayCartas() && !this.j2.hayCartas()) {
-			return this.j1;
-		} else if (!this.j1.hayCartas() && this.j2.hayCartas()) {
-			return this.j2;
-		} else
+		if (this.j1.CantidadCartas() == this.j2.CantidadCartas()) {
 			return null;
+		} else if (this.j1.CantidadCartas() > this.j2.CantidadCartas()) {
+			return this.j1;
+		} else
+			return this.j2;
 	}
 	public int getTurno() {
 		return this.turno;
 	}
 	public void cambiarMazo(Mazo nuevoMazo) {
 		this.mazocartas = nuevoMazo;
+	}
+	public boolean jugadoresAptos() {
+		return (this.j1.hayCartas()&&this.j2.hayCartas());
 	}
 	protected void jugarMano() {
 		Carta c1 = this.j1.tomarCarta();			
