@@ -1,5 +1,5 @@
 
-public class JuegoTurnos extends Juego{
+public class JuegoTurnos extends JuegoCartas{
 	private int cantTurnos;
 	private int turnoActual;
 	public JuegoTurnos(String n1, String n2,Mazo mazocartas,int cantTurnos){
