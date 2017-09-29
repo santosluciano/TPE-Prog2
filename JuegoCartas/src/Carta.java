@@ -3,17 +3,17 @@ import java.util.*;
 public class Carta {
 	private String nombre;
 	private ArrayList<Atributo> atributos;
-	private int cantidadAtributos; 
-	public Carta(int cantidadAtributos){ // Cuando creas la de carta ya lo delimitas.
+	private final int MAX_ATRIBUTOS = 6;
+	private final int MIN_ATRIBUTOS = 3;
+	public Carta(){ 
 		//this.nombre = nombre; String nombre
-		this.cantidadAtributos = cantidadAtributos;
-		this.atributos = new ArrayList<Atributo>(); //delimitar atributos de carta. multiples constructores o funcion
+		this.atributos = new ArrayList<Atributo>(); 
 	}
 	public void setNombre (String nombre) {
 		this.nombre = nombre;
 	}
-	public boolean cartaCargada() {
-		return cantidadAtributos==this.getCantidadAtributos();
+	public boolean isValida() {
+		return this.getCantidadAtributos()>=MIN_ATRIBUTOS && this.getCantidadAtributos()<=MAX_ATRIBUTOS;
 	}
 	public boolean isMenor(Atributo a,Carta c){
 		int i = 0;
@@ -27,7 +27,7 @@ public class Carta {
 		return this.getAtributo(i);
 	}
 	protected void addAtributo(Atributo a) {
-		if (atributos.size() <= cantidadAtributos) {
+		if (atributos.size() <= MAX_ATRIBUTOS) {
 			this.atributos.add(a);
 		}
 		else {

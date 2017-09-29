@@ -12,7 +12,7 @@ public class Mazo {
 		return nombreMazo;
 	}
 	public void addCarta(Carta c) {
-		if (this.vacio()&&c.cartaCargada()) {
+		if (this.vacio()&&c.isValida()) {
 			this.mazo.add(c);
 		}else if (c.equals(this.mazo.get(0))) {
 			this.mazo.add(c);

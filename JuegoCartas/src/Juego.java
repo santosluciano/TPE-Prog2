@@ -34,7 +34,7 @@ public class Juego {
 			tercero = obtnerValor();
 			Atributo c = new Atributo("Mental",tercero);
 			
-			Carta nuevaCarta = new Carta (3);
+			Carta nuevaCarta = new Carta ();
 			nuevaCarta.addAtributo(a);
 			nuevaCarta.addAtributo(b);
 			nuevaCarta.addAtributo(c);
