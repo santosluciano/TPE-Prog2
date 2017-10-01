@@ -58,6 +58,7 @@ public class JuegoCartas {
 		}else {	
 			a = this.j2.elegirAtributo(c2);
 		}
+		System.out.println("Es el Turno de " + ((this.getTurno() == 1) ? j1.getNombre():j2.getNombre()));
 		System.out.println("La carta de " + j1.getNombre() + " es " + c1.getNombre());
 		System.out.println("La carta de " + j2.getNombre() + " es " + c2.getNombre());
 		System.out.println("El atributo a comparar es " + a.getNombre());
