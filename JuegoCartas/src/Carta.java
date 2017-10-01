@@ -65,7 +65,6 @@ public class Carta {
 	}
 		return this.atributos.get(i).getValor();
 	}
-	
 	public void imprimirAtributos(){ // Por si se quieren ver todos los atributos y valores que tiene
 		
 		for (int i=0; i<getCantidadAtributos();i++) {
