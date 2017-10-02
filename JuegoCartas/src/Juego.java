@@ -9,8 +9,11 @@ public class Juego {
 		int primero = 0;
 		int segundo = 0;
 		int tercero = 0;
+		int opcion = 0;
 		String nombreMazo = "";
 		String nombreCarta = "";
+		String nombreJ1 = "";
+		String nombreJ2 = "";
 		
 		System.out.println("¿Cuantas cartas tiene el mazo? ");
 		cantidadCartas = obtnerValor();
@@ -47,9 +50,29 @@ public class Juego {
 		nombreMazo = obtenerNombreCarta();
 		maso.setNombreMazo(nombreMazo);
 		
-		System.out.println("Este juego se hara con el mazo: " + maso.getNombreMazo());
-		JuegoCartas partida = new JuegoTurnos("Lucho","Agu",maso,2);
-		partida.jugar();
+		System.out.println("Nombre Jugador 1:");
+		nombreJ1 = obtenerNombreCarta();
+		System.out.println("Nombre Jugador 2:");
+		nombreJ2 = obtenerNombreCarta();
+    	JuegoCartas partida;
+    	do {
+    			System.out.println ("Elija el tipo de partida:");
+    			System.out.println ("1.Partida normal");
+    			System.out.println ("2.Partida por turnos");
+    			opcion = obtnerValor();
+    	}while(opcion!=1&&opcion!=2); 
+        switch (opcion) {
+        	case 1: 
+        		partida = new JuegoCartas(nombreJ1,nombreJ2,maso);
+        		partida.jugar();
+        		break;
+        	case 2:
+        		System.out.println ("Cuantos turnos va a durar la partida?");
+        		opcion = obtnerValor();
+        		partida = new JuegoTurnos(nombreJ1,nombreJ2,maso,opcion);
+        		partida.jugar();
+        		break;
+        };
 	}
 	public static String obtenerNombreCarta(){
 		boolean nombreValido;
@@ -66,8 +89,7 @@ public class Juego {
 			catch (Exception exc) {
 				  System.out.println( exc );
 				  nombreValido=false;
-				  }
-				
+				  }				
 		}while (!nombreValido || nombreCarta.equals(""));
 		
 		return nombreCarta;

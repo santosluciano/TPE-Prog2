@@ -16,23 +16,23 @@ public class JuegoCartas {
 			while (!hayGanador()) {
 				jugarMano();
 			}
-		if (Ganador() == null) {
+		if (getGanador() == null) {
 			System.out.println("empataron");
 		}else {
-			System.out.println("gano el jugador "+ this.Ganador().getNombre());
+			System.out.println("gano el jugador "+ this.getGanador().getNombre());
 		}
 		}else {
 			System.out.println("Imposible jugar con este mazo");			
 		}
 	}
 	public boolean hayGanador() {
-		return !(this.jugadoresAptos());
+		return (!this.j1.hayCartas()||!this.j2.hayCartas());
 	}
 	private void prepararPartida() {
 		this.mazocartas.barajar();
 		this.mazocartas.repartir(j1,j2);
 	}
-	public Jugador Ganador() {
+	public Jugador getGanador() {
 		if (this.j1.CantidadCartas() == this.j2.CantidadCartas()) {
 			return null;
 		} else if (this.j1.CantidadCartas() > this.j2.CantidadCartas()) {
