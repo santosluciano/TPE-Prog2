@@ -1,7 +1,5 @@
 import java.util.*;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
 public class Carta {
 	private String nombre;
 	private ArrayList<Atributo> atributos;
