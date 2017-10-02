@@ -3,7 +3,6 @@ import java.io.InputStreamReader;
 
 public class Juego { 
 
-
 	public static void main(String[] args) {
 		int cantidadCartas = 0;
 		int primero = 0;
@@ -117,6 +116,5 @@ public class Juego {
 		
 		return valor;
 	}
-
 }
 

@@ -1,5 +1,7 @@
 import java.util.*;
 public class Mazo {
+	private final int PRIMERA = 0;
+	private final int ESPAR = 2;
 	private String nombreMazo;
 	private ArrayList<Carta> mazo;
 	public Mazo() {
@@ -14,7 +16,7 @@ public class Mazo {
 	public void addCarta(Carta c) {
 		if (this.vacio()&&c.isValida()) {
 			this.mazo.add(c);
-		}else if (c.equals(this.mazo.get(0))) {
+		}else if (c.equals(this.mazo.get(PRIMERA))) {
 			this.mazo.add(c);
 		}else {
 			System.out.println("Carta Invalida");
@@ -22,8 +24,8 @@ public class Mazo {
 	}
 	public Carta tomarPrimera() {
 		if (!this.mazo.isEmpty()){
-			Carta c = this.mazo.get(0);
-			this.mazo.remove(0);
+			Carta c = this.mazo.get(PRIMERA);
+			this.mazo.remove(PRIMERA);
 			return c;
 		}else
 			return null;
@@ -31,7 +33,7 @@ public class Mazo {
 	public void repartir(Jugador j1,Jugador j2) {
 		int tamaño;
 		int i = 0;
-		if (this.mazo.size()%2 != 0) {
+		if (this.mazo.size() % ESPAR != 0) {
 			tamaño = this.mazo.size() - 1;
 		}else {
 			tamaño = this.mazo.size();
@@ -53,23 +55,23 @@ public class Mazo {
 		return mazo.size();
 }
 	public void imprimirTodoelMazo(){ 
+		String nombreCarta;
 			
 			for (int i=0; i<getTamañoMazo();i++) {
+				nombreCarta = this.mazo.get(i).getNombre();
 				
-				System.out.println("Nombre Carta: " + this.mazo.get(i).getNombre());
+				System.out.println("Nombre Carta: " + nombreCarta);
 				this.mazo.get(i).imprimirAtributos();				
-
-				
 			}
 	}
 	public void barajar() {   
-	 if (mazo.size()>1) {
-		 for ( int carta = 0; carta < mazo.size(); carta++ ){	 
+		if (mazo.size()>1) {
+			for ( int carta = 0; carta < mazo.size(); carta++ ){	 
 			 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
 			 Carta temp = mazo.get(carta);		 
 			 mazo.set(carta, mazo.get(segundaCarta));
 			 mazo.set(segundaCarta, temp);	 
-		 }
-	 }
+			}
+		}
 	}
 }

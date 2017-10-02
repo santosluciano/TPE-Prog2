@@ -1,12 +1,13 @@
 import java.util.*;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
+
 public class Carta {
 	private String nombre;
 	private ArrayList<Atributo> atributos;
 	private final int MAX_ATRIBUTOS = 6;
 	private final int MIN_ATRIBUTOS = 3;
 	public Carta(){ 
-		//this.nombre = nombre; String nombre
 		this.atributos = new ArrayList<Atributo>(); 
 	}
 	public void setNombre (String nombre) {
@@ -57,24 +58,23 @@ public class Carta {
 	public int getCantidadAtributos() { 		
 		return this.atributos.size();
 	}
-	public int consultarValorAtributo(Atributo a){ //Método que se puede borrar despues
-			  									  // Para consultar el valor desde "Juego".
+	public int consultarValorAtributo(Atributo a){ 
 		int i = 0;
 		while (i<this.getCantidadAtributos()&&!atributos.get(i).equals(a)) {
 		i++;
 	}
 		return this.atributos.get(i).getValor();
 	}
-	public void imprimirAtributos(){ // Por si se quieren ver todos los atributos y valores que tiene
+	public void imprimirAtributos(){
+		String nombreAtributo;
+		int valorAtributo;
 		
 		for (int i=0; i<getCantidadAtributos();i++) {
+			nombreAtributo = this.atributos.get(i).getNombre();
+			valorAtributo = this.atributos.get(i).getValor();
 			
-			System.out.println("Nombre Atributo: " + this.atributos.get(i).getNombre());
-			System.out.println("Valor Atributo: " + this.atributos.get(i).getValor());
-
-			
+			System.out.println("Nombre Atributo: " + nombreAtributo);
+			System.out.println("Valor Atributo: " + valorAtributo);
 		}
-		
-		
 	}
 }
