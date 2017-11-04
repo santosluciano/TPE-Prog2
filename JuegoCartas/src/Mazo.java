@@ -14,7 +14,7 @@ public class Mazo {
 		return nombreMazo;
 	}
 	public void addCarta(Carta c) {
-		if (this.vacio()&&c.isValida()) {
+		if (this.vacio()) {
 			this.mazo.add(c);
 		}else if (c.equals(this.mazo.get(PRIMERA))) {
 			this.mazo.add(c);
@@ -54,24 +54,16 @@ public class Mazo {
 	public int getTamañoMazo(){
 		return mazo.size();
 }
-	public void imprimirTodoelMazo(){ 
-		String nombreCarta;
+	public String toString(){ 
+		String datosMazo = "";
+		datosMazo += this.nombreMazo + "\n";
 			
 			for (int i=0; i<getTamañoMazo();i++) {
-				nombreCarta = this.mazo.get(i).getNombre();
-				
-				System.out.println("Nombre Carta: " + nombreCarta);
-				this.mazo.get(i).imprimirAtributos();				
+				datosMazo = this.mazo.get(i).toString() + "\n";			
 			}
+		return datosMazo;
 	}
 	public void barajar() {   
-		if (mazo.size()>1) {
-			for ( int carta = 0; carta < mazo.size(); carta++ ){	 
-			 int segundaCarta = (int) (Math.random() * (getTamañoMazo()-1)+1);
-			 Carta temp = mazo.get(carta);		 
-			 mazo.set(carta, mazo.get(segundaCarta));
-			 mazo.set(segundaCarta, temp);	 
-			}
-		}
+		Collections.shuffle(mazo);
 	}
 }

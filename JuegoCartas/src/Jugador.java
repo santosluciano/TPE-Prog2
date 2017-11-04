@@ -22,7 +22,7 @@ public class Jugador {
 	public void addCarta(Carta c1) {
 		this.cartasJugador.addCarta(c1);
 	}
-	public Atributo elegirAtributo(Carta c) {
+	public String elegirAtributo(Carta c) {
 		return c.atributoAzar();
 	}
 	public int CantidadCartas(){ 

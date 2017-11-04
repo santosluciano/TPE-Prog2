@@ -2,77 +2,71 @@ import java.util.*;
 
 public class Carta {
 	private String nombre;
-	private ArrayList<Atributo> atributos;
-	private final int MAX_ATRIBUTOS = 6;
-	private final int MIN_ATRIBUTOS = 3;
+	private HashMap<String, Double> atributos;
+
 	public Carta(){ 
-		this.atributos = new ArrayList<Atributo>(); 
+		this.atributos = new HashMap<String, Double>(); 
 	}
 	public void setNombre (String nombre) {
 		this.nombre = nombre;
 	}
-	public boolean isValida() {
-		return this.getCantidadAtributos()>=MIN_ATRIBUTOS && this.getCantidadAtributos()<=MAX_ATRIBUTOS;
-	}
-	public boolean isMenor(Atributo a,Carta c){
-		int i = 0;
-		while (i<this.getCantidadAtributos()&&!this.atributos.get(i).equals(a)) {
-			i++;
-		}
-		return this.atributos.get(i).isMenor(c.getAtributo(i));
+
+	public boolean isMenor(String nombre,Carta c){
+		return this.getValorAtributo(nombre)<c.getValorAtributo(nombre);
 	}	
-	public Atributo atributoAzar() {
-		int i= (int) (Math.random() * (this.getCantidadAtributos()-1));
-		return this.getAtributo(i);
+	
+//	public String atributoAzar() {
+//		int i= (int) (Math.random() * (this.getCantidadAtributos()-1));
+//		
+//		return this.getAtributo(i);
+//	}
+	
+	protected void addAtributo(String nombre, double valor) {
+		this.atributos.put(nombre, valor);
 	}
-	protected void addAtributo(Atributo a) {
-		if (atributos.size() <= MAX_ATRIBUTOS) {
-			this.atributos.add(a);
-		}
-		else {
-			System.out.println("No se pueden agregar mas atributos");
-		}
+
+	public Double getValorAtributo(String nombre) {
+		return this.atributos.get(nombre);
 	}
-	public Atributo getAtributo(int i) {
-		return this.atributos.get(i);
-	}
+		
 	public String getNombre() {
 		return this.nombre;
 	}
+	
+	public boolean containAtributo(String nombre) {
+		return atributos.containsKey(nombre);
+	}
 	public boolean equals(Carta c) {
 		if (this.getCantidadAtributos() == c.getCantidadAtributos()) {			
-			for  (int i = 0; i < this.getCantidadAtributos(); i++) {				
-				if 	(this.getAtributo(i).equals(c.getAtributo(i))) {
+			for (String atributo : atributos.keySet()) {
+				if(c.containAtributo(atributo)){
 					continue;
-				}else {
+				}
+				else 
+				{
 					return false;
 				}
-			}return true;			
+			}
+						
+			return true;			
 		}
 		else {
 			return false;
 		}
 	}
+	
 	public int getCantidadAtributos() { 		
 		return this.atributos.size();
 	}
-	public int consultarValorAtributo(Atributo a){ 
-		int i = 0;
-		while (i<this.getCantidadAtributos()&&!atributos.get(i).equals(a)) {
-		i++;
-	}
-		return this.atributos.get(i).getValor();
-	}
-	public void imprimirAtributos(){
-		String nombreAtributo;
-		int valorAtributo;
+	
+	public String toString(){ // modificar
+		String datosCarta = "";		
+		datosCarta += this.getNombre() + "\n";
 		
-		for (int i=0; i<getCantidadAtributos();i++) {
-			nombreAtributo = this.atributos.get(i).getNombre();
-			valorAtributo = this.atributos.get(i).getValor();
-			
-			System.out.println("Nombre Atributo: " + nombreAtributo);
-			System.out.println("Valor Atributo: " + valorAtributo);
+		for (String atributo : atributos.keySet()) {
+			datosCarta += " - " + atributo + " = " + atributos.get(atributo) + "\n";
 		}
+		return datosCarta;
 	}
+
 }
