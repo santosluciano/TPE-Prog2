@@ -15,11 +15,15 @@ public class Carta {
 		return this.getValorAtributo(nombre)<c.getValorAtributo(nombre);
 	}	
 	
-//	public String atributoAzar() {
-//		int i= (int) (Math.random() * (this.getCantidadAtributos()-1));
-//		
-//		return this.getAtributo(i);
-//	}
+	public String atributoAzar() {
+		String clave = "";
+		int r= (int) (Math.random() * (this.getCantidadAtributos()-1));
+		Iterator<String> it = this.atributos.keySet().iterator();
+		for (int i = 0;it.hasNext()&&i<=r;i++) {
+			clave = it.next();
+		}
+		return clave;
+	}//verificar si esta bien hecho
 	
 	protected void addAtributo(String nombre, double valor) {
 		this.atributos.put(nombre, valor);
