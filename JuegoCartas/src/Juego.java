@@ -25,20 +25,20 @@ public class Juego {
 				
 			System.out.println("Fuerza: ");
 			primero = obtnerValor();
-			Atributo a = new Atributo("Fuerza",primero);
+			String a = "Fuerza";
 
 			System.out.println("Velocidad: ");
 			segundo = obtnerValor();
-			Atributo b = new Atributo("Velocidad",segundo);
+			String b = "Velocidad";
 
 			System.out.println("Mental: ");
 			tercero = obtnerValor();
-			Atributo c = new Atributo("Mental",tercero);
+			String c = "Mental";
 			
 			Carta nuevaCarta = new Carta ();
-			nuevaCarta.addAtributo(a);
-			nuevaCarta.addAtributo(b);
-			nuevaCarta.addAtributo(c);
+			nuevaCarta.addAtributo(a,primero);
+			nuevaCarta.addAtributo(b,segundo);
+			nuevaCarta.addAtributo(c,tercero);
 			nuevaCarta.setNombre(nombreCarta);
 		
 			

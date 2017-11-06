@@ -63,12 +63,12 @@ public class JuegoCartas {
 	protected void jugarMano() {
 		Carta c1 = this.j1.tomarCarta();			
 		Carta c2 = this.j2.tomarCarta();
-		Atributo a;
+		String a;
 		String nombreCartaJ1 = c1.getNombre();
 		String nombreCartaJ2 = c2.getNombre();
 		String nombreAtributo;
-		int valorAtributoJ1;
-		int valorAtributoJ2;
+		Double valorAtributoJ1;
+		Double valorAtributoJ2;
 		int cantCartasJ1;
 		int cantCartasJ2;
 
@@ -78,9 +78,9 @@ public class JuegoCartas {
 			a = this.j2.elegirAtributo(c2);
 		}
 		
-		nombreAtributo=a.getNombre();
-		valorAtributoJ1 = c1.consultarValorAtributo(a);
-		valorAtributoJ2 = c2.consultarValorAtributo(a);
+		nombreAtributo = a;
+		valorAtributoJ1 = c1.getValorAtributo(a);
+		valorAtributoJ2 = c2.getValorAtributo(a);
 		
 		System.out.println("Es el Turno de " + ((this.getTurno()) ? this.nombreJ1:this.nombreJ2));
 		System.out.println("La carta de " + this.nombreJ1 + " es " + nombreCartaJ1);
