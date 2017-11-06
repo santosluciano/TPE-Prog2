@@ -1,0 +1,50 @@
+Card_1,Valentía=6|Liderazgo=93|Ternura=68
+Card_2,Valentía=4|Liderazgo=98|Ternura=11
+Card_3,Valentía=4|Liderazgo=40|Ternura=25
+Card_4,Valentía=7|Liderazgo=55|Ternura=2
+Card_5,Valentía=8|Liderazgo=43|Ternura=64
+Card_6,Valentía=3|Liderazgo=72|Ternura=8
+Card_7,Valentía=1|Liderazgo=96|Ternura=86
+Card_8,Valentía=1|Liderazgo=18|Ternura=84
+Card_9,Valentía=1|Liderazgo=81|Ternura=90
+Card_10,Valentía=6|Liderazgo=96|Ternura=61
+Card_11,Valentía=3|Liderazgo=52|Ternura=17
+Card_12,Valentía=2|Liderazgo=38|Ternura=66
+Card_13,Valentía=3|Liderazgo=29|Ternura=86
+Card_14,Valentía=9|Liderazgo=94|Ternura=71
+Card_15,Valentía=9|Liderazgo=85|Ternura=96
+Card_16,Valentía=7|Liderazgo=66|Ternura=28
+Card_17,Valentía=8|Liderazgo=7|Ternura=32
+Card_18,Valentía=3|Liderazgo=15|Ternura=58
+Card_19,Valentía=3|Liderazgo=93|Ternura=38
+Card_20,Valentía=2|Liderazgo=34|Ternura=40
+Card_21,Valentía=1|Liderazgo=55|Ternura=50
+Card_22,Valentía=6|Liderazgo=24|Ternura=77
+Card_23,Valentía=7|Liderazgo=65|Ternura=30
+Card_24,Valentía=8|Liderazgo=31|Ternura=82
+Card_25,Valentía=1|Liderazgo=67|Ternura=86
+Card_26,Valentía=2|Liderazgo=50|Ternura=25
+Card_27,Valentía=1|Liderazgo=25|Ternura=65
+Card_28,Valentía=1|Liderazgo=2|Ternura=83
+Card_29,Valentía=3|Liderazgo=67|Ternura=86
+Card_30,Valentía=9|Liderazgo=41|Ternura=48
+Card_31,Valentía=1|Liderazgo=18|Ternura=14
+Card_32,Valentía=8|Liderazgo=72|Ternura=54
+Card_33,Valentía=5|Liderazgo=45|Ternura=15
+Card_34,Valentía=3|Liderazgo=30|Ternura=87
+Card_35,Valentía=9|Liderazgo=1|Ternura=74
+Card_36,Altura=8.29|Peso=1041.09|Fuerza=1143833.65|Peleas Ganadas=305|Velocidad=375.13
+Card_37,Altura=9.65|Peso=7661.16|Fuerza=1377578.61|Peleas Ganadas=907|Velocidad=80.06
+Card_38,Altura=9.94|Peso=10649.72|Fuerza=788493.39|Peleas Ganadas=704|Velocidad=234.56
+Card_39,Altura=9.62|Peso=6850.22|Fuerza=609127.71|Peleas Ganadas=323|Velocidad=113.99
+Card_40,Altura=9.54|Peso=13395.7|Fuerza=991849.81|Peleas Ganadas=680|Velocidad=99.11
+Card_41,Altura=9.42|Peso=2863.85|Fuerza=1162413.58|Peleas Ganadas=699|Velocidad=229.41
+Card_42,Altura=8.25|Peso=12174.15|Fuerza=653056.35|Peleas Ganadas=331|Velocidad=67.55
+Card_43,Altura=9.57|Peso=9416.72|Fuerza=1415641.89|Peleas Ganadas=628|Velocidad=241.78
+Card_44,Altura=9.17|Peso=10603.05|Fuerza=945952.1|Peleas Ganadas=396|Velocidad=143.67
+Card_45,Altura=8.09|Peso=5310.81|Fuerza=656716.24|Peleas Ganadas=181|Velocidad=123.26
+Card_46,Altura=8.57|Peso=3079.24|Fuerza=1009999.54|Peleas Ganadas=210|Velocidad=116.11
+Card_47,Altura=8.51|Peso=12313.1|Fuerza=946439.97|Peleas Ganadas=479|Velocidad=333.46
+Card_48,Altura=9.8|Peso=9479.76|Fuerza=935912.6|Peleas Ganadas=465|Velocidad=344.91
+Card_49,Altura=8.69|Peso=2066.83|Fuerza=769582.56|Peleas Ganadas=154|Velocidad=116.42
+Card_50,Altura=8.9|Peso=9001.83|Fuerza=1292673.43|Peleas Ganadas=748|Velocidad=336.78

@@ -1,12 +1,11 @@
 
 public class JuegoCartas {
-	private final int TURNOJ1 = 1;
-	private final int TURNOJ2 = 2;
+
 	private Jugador j1;
 	private Jugador j2;
 	private String nombreJ1;
 	private String nombreJ2;
-	private int turno;
+	private Jugador turno;
 	private String jugadorGanador;
 	
 
@@ -16,7 +15,7 @@ public class JuegoCartas {
 		this.j1 = new Jugador(n1);
 		this.j2 = new Jugador(n2);
 		this.mazocartas = mazocartas;
-		this.turno = TURNOJ1;
+		this.turno = j1;
 		this.nombreJ1 = j1.getNombre();
 		this.nombreJ2= j2.getNombre();
 	}
@@ -51,8 +50,8 @@ public class JuegoCartas {
 		} else
 			return this.j2;
 	}
-	public boolean getTurno() {
-		return this.turno == TURNOJ1;
+	public Jugador getTurno() {
+		return this.turno;
 	}
 	public void cambiarMazo(Mazo nuevoMazo) {
 		this.mazocartas = nuevoMazo;
@@ -72,7 +71,7 @@ public class JuegoCartas {
 		int cantCartasJ1;
 		int cantCartasJ2;
 
-		if (this.turno==TURNOJ1) {
+		if (this.getTurno().equals(j1)) {
 			a = this.j1.elegirAtributo(c1);
 		}else {	
 			a = this.j2.elegirAtributo(c2);
@@ -82,7 +81,7 @@ public class JuegoCartas {
 		valorAtributoJ1 = c1.getValorAtributo(a);
 		valorAtributoJ2 = c2.getValorAtributo(a);
 		
-		System.out.println("Es el Turno de " + ((this.getTurno()) ? this.nombreJ1:this.nombreJ2));
+		System.out.println("Es el Turno de " + (this.getTurno().getNombre()));
 		System.out.println("La carta de " + this.nombreJ1 + " es " + nombreCartaJ1);
 		System.out.println("La carta de " + this.nombreJ2 + " es " + nombreCartaJ2);
 		System.out.println("El atributo a comparar es " + nombreAtributo);
@@ -92,11 +91,11 @@ public class JuegoCartas {
 		if (c1.isMenor(a,c2)) { 			
 			this.j2.addCarta(c1); 
 			this.j2.addCarta(c2);
-			this.turno = TURNOJ2;
+			this.turno = j2;
 		}else if (c2.isMenor(a,c1)) {
 			this.j1.addCarta(c1);
 			this.j1.addCarta(c2);
-			this.turno = TURNOJ1;
+			this.turno = j1;
 		}else {
 			this.j1.addCarta(c1);
 			this.j2.addCarta(c2);
@@ -106,4 +105,5 @@ public class JuegoCartas {
 		System.out.println("El jugador uno tiene " + cantCartasJ1 + " cartas");
 		System.out.println("El jugador dos tiene " + cantCartasJ2 + " cartas");
 	}
+
 }

@@ -17,10 +17,15 @@ public class Carta {
 	
 	public String atributoAzar() {
 		String clave = "";
-		int r= (int) (Math.random() * (this.getCantidadAtributos()-1));
+		int r= (int) (Math.random() * (this.getCantidadAtributos()));
+
+
 		Iterator<String> it = this.atributos.keySet().iterator();
-		for (int i = 0;it.hasNext()&&i<=r;i++) {
+		for (int i = 0;it.hasNext() && i<=r;i++) {
+			
+	
 			clave = it.next();
+	
 		}
 		return clave;
 	}//verificar si esta bien hecho
