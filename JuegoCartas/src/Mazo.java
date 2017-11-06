@@ -59,11 +59,24 @@ public class Mazo {
 		datosMazo += this.nombreMazo + "\n";
 			
 			for (int i=0; i<getTamañoMazo();i++) {
-				datosMazo = this.mazo.get(i).toString() + "\n";			
+				datosMazo += this.mazo.get(i).toString() + "\n";		
+				
 			}
 		return datosMazo;
 	}
 	public void barajar() {   
 		Collections.shuffle(mazo);
+	}
+	
+	public Mazo getCartas(Filtro filtro){
+		Mazo nuevoMazo = new Mazo();
+		
+		for (Carta carta : mazo) {
+			
+			if (filtro.cumple(carta)){
+				nuevoMazo.addCarta(carta);
+			}
+		}
+		return nuevoMazo;
 	}
 }
