@@ -80,7 +80,7 @@ public class JuegoCartas {
 		nombreAtributo = a;
 		valorAtributoJ1 = c1.getValorAtributo(a);
 		valorAtributoJ2 = c2.getValorAtributo(a);
-		
+		System.out.println("----------------------------------");
 		System.out.println("Es el Turno de " + (this.getTurno().getNombre()));
 		System.out.println("La carta de " + this.nombreJ1 + " es " + nombreCartaJ1);
 		System.out.println("La carta de " + this.nombreJ2 + " es " + nombreCartaJ2);

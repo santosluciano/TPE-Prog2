@@ -5,6 +5,7 @@ public class Mazo {
 	private String nombreMazo;
 	private ArrayList<Carta> mazo;
 	public Mazo() {
+		this.nombreMazo = "";
 		this.mazo = new ArrayList<Carta>();
 	}	
 	public void setNombreMazo(String nombreMazo){

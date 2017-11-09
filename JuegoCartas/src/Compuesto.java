@@ -1,5 +1,5 @@
 
-public abstract class Compuesto {
+public abstract class Compuesto implements Filtro{
 
 	private Filtro filtroUno;
 	private Filtro filtroDos;

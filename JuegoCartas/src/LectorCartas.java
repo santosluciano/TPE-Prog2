@@ -61,7 +61,7 @@ public class LectorCartas {
 
 		try {
 			//  Archivo
-			file = new File (folderPath+"\\"+fileName);
+			file = new File (folderPath+"/"+fileName);
 			fr = new FileReader (file);
 			br = new BufferedReader(fr);
 
@@ -94,39 +94,6 @@ public class LectorCartas {
 		mazosLeidos = 0;
 		
 	}
-	
-	
-	
-	public static void main(String[] args){
-		
-		LectorCartas lector = new LectorCartas();
-		
-		String carpeta = "C://Cartas";
-		String mazoC1 = "minions.txt";
-		Vector<Hashtable> mazo1 = lector.leerMazo(carpeta, mazoC1);
-	
-		System.out.println("MAZO: "+ mazoC1 + " en: " + carpeta);
-		for (int i = 0; i< mazo1.size(); i++){
-			Hashtable carta = mazo1.elementAt(i);
-			
-			System.out.println("Carta : " + carta.get(LectorCartas.NOMBRE));
-		
-			Iterator it= carta.keySet().iterator();
-			
-			while (it.hasNext()){
-				String key = (String) it.next();
-				
-				if (!key.equals(LectorCartas.NOMBRE)){ // OJO Nombre No queremos mostrarlo
-					System.out.println(" Atributo: "+ key + "\t\tvalor: " + carta.get(key));
-				}
-				
-			}
-			
-           System.out.println("---------------------------------");			
-		}
-			
-	}
-	
 	
 	public int getCantidadMazosLeidos(){
 		return mazosLeidos;

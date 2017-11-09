@@ -1,5 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Vector;
 
 
 
@@ -8,95 +11,138 @@ public class Juego {
 	
 	public static void main(String[] args) {
 
-		String a = "Fuerza";
-		String b = "Velocidad";
-		String c = "Mental";
-
+			LectorCartas lector = new LectorCartas();
+			Mazo nuevoMazo = new Mazo();
+			
+			String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas";
+			String mazoC1 = "minions.txt";
+			Vector<Hashtable> mazo1 = lector.leerMazo(carpeta, mazoC1);
+			String[] nombreMazo = mazoC1.split(".");
+			// System.out.println(mazoC1);			
+			nuevoMazo.setNombreMazo(mazoC1);
+			
+			System.out.println("MAZO: "+ mazoC1 + " en: " + carpeta);
+			for (int i = 0; i< mazo1.size(); i++){
+				Hashtable carta = mazo1.elementAt(i);
+				Carta nuevaCarta = new Carta();
+				nuevaCarta.setNombre((String)carta.get(LectorCartas.NOMBRE));
+		//		System.out.println("Carta : " + carta.get(LectorCartas.NOMBRE));
+			
+				Iterator it= carta.keySet().iterator();
+				
+				while (it.hasNext()){
+					String key = (String) it.next();
+					
+					if (!key.equals(LectorCartas.NOMBRE)){ // OJO Nombre No queremos mostrarlo
+						nuevaCarta.addAtributo(key, (Double) carta.get(key));
+						//System.out.println(" Atributo: "+ key + "\t\tvalor: " + carta.get(key));
+					}
+					
+				}
+				nuevoMazo.addCarta(nuevaCarta);
+	           //System.out.println("---------------------------------");			
+			}
+			//System.out.println(nuevoMazo.toString());
+			//JuegoTurnos partida = new JuegoTurnos("lucho","agustin",nuevoMazo,10);
+			//partida.jugar();
+			
+			Filtro mayor = new EsMayor("Ternura",95);
+			Filtro menor = new EsMenor("Liderazgo", 40);
+			Filtro compuesto = new OR(mayor,menor);
+			Mazo mazoFiltrado = nuevoMazo.getCartas(compuesto);
+			System.out.println(mazoFiltrado.toString());
+		}
+	
 		
-		Carta uno = new Carta();
-		Carta dos = new Carta();
-		Carta tres = new Carta();
-		Carta cuatro = new Carta();
-		Carta cinco = new Carta();
-		Carta seis = new Carta();
-		Carta siete = new Carta();
-		Carta ocho = new Carta();
-		Carta nueve = new Carta();
-		Carta diez = new Carta();
-
-		uno.setNombre("carta uno");
-		uno.addAtributo(a, 15);
-		uno.addAtributo(b, 15);
-		uno.addAtributo(c, 15);
-
-		dos.setNombre("carta dos");
-
-		dos.addAtributo(a, 10);
-		dos.addAtributo(b, 10);
-		dos.addAtributo(c, 10);
-
-		tres.setNombre("carta tres");
-
-		tres.addAtributo(a, 2);
-		tres.addAtributo(b, 2);
-		tres.addAtributo(c, 2);
-
-		cuatro.setNombre("carta cuatro");
-
-		cuatro.addAtributo(a, 10);
-		cuatro.addAtributo(b, 20);
-		cuatro.addAtributo(c, 10);
-
-		seis.setNombre("carta seis");
-
-		seis.addAtributo(a, 3);
-		seis.addAtributo(b, 3);
-		seis.addAtributo(c, 3);
-
-		siete.setNombre("carta siete");
-
-		siete.addAtributo(a, 20);
-		siete.addAtributo(b, 20);
-		siete.addAtributo(c, 20);
-
-		ocho.setNombre("carta ocho");
-
-		ocho.addAtributo(a, 9);
-		ocho.addAtributo(b, 9);
-		ocho.addAtributo(c, 9);
-
-		nueve.setNombre("carta nueve");
-
-		nueve.addAtributo(a, 9);
-		nueve.addAtributo(b, 9);
-		nueve.addAtributo(c, 9);
-
-		diez.setNombre("carta diez");
-
-		diez.addAtributo(a, 15);
-		diez.addAtributo(b, 15);
-		diez.addAtributo(c, 15);
-		
-		
-		Mazo mazo = new Mazo();
-		mazo.addCarta(uno);
-		mazo.addCarta(dos);
-		mazo.addCarta(tres);
-		mazo.addCarta(cuatro);
-		mazo.addCarta(cinco);
-		mazo.addCarta(seis);
-		mazo.addCarta(siete);
-		mazo.addCarta(ocho);
-		mazo.addCarta(nueve);
-		mazo.addCarta(diez);
-
-		
-		System.out.println(mazo.toString());
-
-		Mazo nuevo = mazo.getCartas(new EsMayor("Fuerza", 10));
-		
-		System.out.println(nuevo.toString());
-		
+//		String a = "Fuerza";
+//		String b = "Velocidad";
+//		String c = "Mental";
+//
+//		
+//		Carta uno = new Carta();
+//		Carta dos = new Carta();
+//		Carta tres = new Carta();
+//		Carta cuatro = new Carta();
+//		Carta cinco = new Carta();
+//		Carta seis = new Carta();
+//		Carta siete = new Carta();
+//		Carta ocho = new Carta();
+//		Carta nueve = new Carta();
+//		Carta diez = new Carta();
+//
+//		uno.setNombre("carta uno");
+//		uno.addAtributo(a, 15);
+//		uno.addAtributo(b, 15);
+//		uno.addAtributo(c, 15);
+//
+//		dos.setNombre("carta dos");
+//
+//		dos.addAtributo(a, 10);
+//		dos.addAtributo(b, 10);
+//		dos.addAtributo(c, 10);
+//
+//		tres.setNombre("carta tres");
+//
+//		tres.addAtributo(a, 2);
+//		tres.addAtributo(b, 2);
+//		tres.addAtributo(c, 2);
+//
+//		cuatro.setNombre("carta cuatro");
+//
+//		cuatro.addAtributo(a, 10);
+//		cuatro.addAtributo(b, 20);
+//		cuatro.addAtributo(c, 10);
+//
+//		seis.setNombre("carta seis");
+//
+//		seis.addAtributo(a, 3);
+//		seis.addAtributo(b, 3);
+//		seis.addAtributo(c, 3);
+//
+//		siete.setNombre("carta siete");
+//
+//		siete.addAtributo(a, 20);
+//		siete.addAtributo(b, 20);
+//		siete.addAtributo(c, 20);
+//
+//		ocho.setNombre("carta ocho");
+//
+//		ocho.addAtributo(a, 9);
+//		ocho.addAtributo(b, 9);
+//		ocho.addAtributo(c, 9);
+//
+//		nueve.setNombre("carta nueve");
+//
+//		nueve.addAtributo(a, 9);
+//		nueve.addAtributo(b, 9);
+//		nueve.addAtributo(c, 9);
+//
+//		diez.setNombre("carta diez");
+//
+//		diez.addAtributo(a, 15);
+//		diez.addAtributo(b, 15);
+//		diez.addAtributo(c, 15);
+//		
+//		
+//		Mazo mazo = new Mazo();
+//		mazo.addCarta(uno);
+//		mazo.addCarta(dos);
+//		mazo.addCarta(tres);
+//		mazo.addCarta(cuatro);
+//		mazo.addCarta(cinco);
+//		mazo.addCarta(seis);
+//		mazo.addCarta(siete);
+//		mazo.addCarta(ocho);
+//		mazo.addCarta(nueve);
+//		mazo.addCarta(diez);
+//
+//		
+//		System.out.println(mazo.toString());
+//
+//		Mazo nuevo = mazo.getCartas(new EsMayor("Fuerza", 10));
+//		
+//		System.out.println(nuevo.toString());
+//		
 		
 //		
 //				int cantidadCartas = 0;
@@ -212,7 +258,7 @@ public class Juego {
 //		return valor;
 //
 	}
-}
+
 		
 		
 		
