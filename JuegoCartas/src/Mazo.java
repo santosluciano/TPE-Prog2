@@ -14,13 +14,15 @@ public class Mazo {
 	public String getNombreMazo(){
 		return nombreMazo;
 	}
-	public void addCarta(Carta c) {
+	public boolean addCarta(Carta c) {
 		if (this.vacio()) {
 			this.mazo.add(c);
+			return true;
 		}else if (c.equals(this.mazo.get(PRIMERA))) {
 			this.mazo.add(c);
+			return true;
 		}else {
-			System.out.println("Carta Invalida");
+			return false;
 		}		
 	}
 	public Carta tomarPrimera() {
