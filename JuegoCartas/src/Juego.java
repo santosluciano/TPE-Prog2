@@ -6,60 +6,107 @@ import java.util.*;
 
 public class Juego { 
 
-	
+
 	public static void main(String[] args) {
 
-			List <Mazo> mazos = new ArrayList<Mazo>(); 
-			int opcion;
-			
-			
-			
-			
-			
+		List <Mazo> mazos = new ArrayList<Mazo>(); 
+		int opcion;
+		int mazoSeleccionado;
+		String nombreJ1;
+		String nombreJ2;
+		Mazo mazo;
+     	JuegoCartas partida;
 
-			do {
-				System.out.println ("1.Partida normal");
-				System.out.println ("2.Partida por turnos");
-				System.out.println ("3.Cargar mazo");
-				System.out.println ("4.Salir del juego");
 
-				opcion = obtnerValor();
-			}while(opcion<=0||opcion>=5); 
-			
-			
-			switch (opcion) {
-			case 1: 
-				
-				break;
-			case 2:
 
-				break;
-			case 3:
-				mazos.addAll(cargarMazo());				
-				break;
-			case 4:
-				System.out.println ("Gracias por jugar");
-				break;
-			};
-			
-			for(Mazo mazo:mazos) {
-				System.out.println(mazo.toString());
-				System.out.println("!!!!!!!!!!!!!!!!!!");				
+
+
+
+
+		do {
+			System.out.println ("1.Partida normal");
+			System.out.println ("2.Partida por turnos");
+			System.out.println ("3.Cargar mazo");
+			System.out.println ("4.Salir del juego");
+
+			opcion = obtnerValor();
+		}while(opcion<=0||opcion>=5); 
+
+
+		switch (opcion) {
+		case 1: 
+			 
+			System.out.println ("¿¿Con que mazo quieres jugar??");
+			System.out.println ("ingrese Valor numerico");
+
+
+			for (int i = 0; i < mazos.size(); i++) {
+				System.out.println("opcion "+ (i+1) + ": " + mazos.get(i).getNombreMazo());
 			}
+			mazoSeleccionado = obtnerValor();
 			
+			mazo = mazos.get(mazoSeleccionado);
 			
+			System.out.println ("ingrese Nombre de los jugadores");
+			System.out.print ("Nombre de Jugador 1: ");
+			nombreJ1 = obtenerNombre();
 			
+			System.out.print ("Nombre de Jugador 2: ");
+			nombreJ2 = obtenerNombre();
 
-			//JuegoTurnos partida = new JuegoTurnos("lucho","agustin",nuevoMazo,10);
-			//partida.jugar();
 			
-//			Filtro mayor = new EsMayor("Ternura",95);
-//			Filtro menor = new EsMenor("Liderazgo", 40);
-//			Filtro compuesto = new OR(mayor,menor);
-//			Mazo mazoFiltrado = nuevoMazo.getCartas(compuesto);
-//			System.out.println(mazoFiltrado.toString());
-		}
-	
+			partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
+     		partida.jugar();
+			break;
+		case 2:
+			System.out.println ("¿¿Con que mazo quieres jugar??");
+			System.out.println ("ingrese Valor numerico");
+
+
+			for (int i = 0; i < mazos.size(); i++) {
+				System.out.println("opcion "+ (i+1) + ": " + mazos.get(i).getNombreMazo());
+			}
+			mazoSeleccionado = obtnerValor();
+			
+			mazo = mazos.get(mazoSeleccionado);
+			
+			System.out.println ("ingrese Nombre de los jugadores");
+			System.out.print ("Nombre de Jugador 1: ");
+			nombreJ1 = obtenerNombre();
+			
+			System.out.print ("Nombre de Jugador 2: ");
+			nombreJ2 = obtenerNombre();
+			
+        	System.out.println ("Cuantos turnos va a durar la partida?");
+     		opcion = obtnerValor();
+     		partida = new JuegoTurnos(nombreJ1,nombreJ2,mazo,opcion);
+     		partida.jugar();;
+		case 3:
+			mazos.addAll(cargarMazo());				
+			break;
+		case 4:
+			System.out.println ("Gracias por jugar");
+			break;
+		};
+
+//		for(Mazo seleccionMazo:mazos) {
+//			System.out.println(seleccionMazo.toString());
+//			System.out.println("!!!!!!!!!!!!!!!!!!");				
+//		}
+
+
+
+
+		//JuegoTurnos partida = new JuegoTurnos("lucho","agustin",nuevoMazo,10);
+		//partida.jugar();
+
+		//			Filtro mayor = new EsMayor("Ternura",95);
+		//			Filtro menor = new EsMenor("Liderazgo", 40);
+		//			Filtro compuesto = new OR(mayor,menor);
+		//			Mazo mazoFiltrado = nuevoMazo.getCartas(compuesto);
+		//			System.out.println(mazoFiltrado.toString());
+	}
+
 	public static List<Mazo> cargarMazo() {
 		List <Mazo> mazos = new ArrayList<Mazo>();
 		String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas";
@@ -80,14 +127,14 @@ public class Juego {
 			nuevaCarta.setNombre((String)carta.get(LectorCartas.NOMBRE));
 
 			Iterator it= carta.keySet().iterator();
-			
+
 			while (it.hasNext()){
 				String key = (String) it.next();
-				
+
 				if (!key.equals(LectorCartas.NOMBRE)){
 					nuevaCarta.addAtributo(key, (Double) carta.get(key));
 				}
-				
+
 			}
 			int j = 0;
 			boolean cargo = false;
@@ -103,52 +150,54 @@ public class Juego {
 		}
 		return mazos;
 	}
+
+	public static String obtenerNombre(){
+		boolean nombreValido;
+		String nombre="";
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+
+		do {
+
+			try {
+				nombre = entrada.readLine();
+				nombreValido=true;
+			}
+
+			catch (Exception exc) {
+				System.out.println( exc );
+				nombreValido=false;
+			}				
+		}while (!nombreValido || nombre.equals(""));
+
+		return nombre;
+	}
+	public static int obtnerValor(){
+		boolean valorValido;
+		int valor = 0;
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+
+		do {
+
+			try {
+				valor = new Integer(entrada.readLine());
+				valorValido=true;
+			}
+			catch (NumberFormatException e){
+				System.out.println("numero invalido");
+				valorValido = false;
+			}	
+			catch (Exception exc) {
+				System.out.println( exc );
+				valorValido=false;
+			}
+		}while (!valorValido);
+
+		return valor;
+	}
 	
-	 	public static String obtenerNombre(){
-	 		boolean nombreValido;
-	 		String nombre="";
-	 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-	 
-	 		do {
-	 			
-	 			 try {
-	 				 nombre = entrada.readLine();
-	 				 nombreValido=true;
-	 				}
-	 					
-	 			catch (Exception exc) {
-	 				  System.out.println( exc );
-	 				  nombreValido=false;
-	 				  }				
-	 		}while (!nombreValido || nombre.equals(""));
-	 		
-	 		return nombre;
-	 	}
-	 	public static int obtnerValor(){
-	 		boolean valorValido;
-	 		int valor = 0;
-	 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-	 
-	 		do {
-	 			
-	 			 try {
-	 				 valor = new Integer(entrada.readLine());
-	 				 valorValido=true;
-	 				}
-	 			 catch (NumberFormatException e){
-	 					System.out.println("numero invalido");
-	 					valorValido = false;
-	 				}	
-	 			catch (Exception exc) {
-	 				  System.out.println( exc );
-	 				  valorValido=false;
-	 				  }
-	 		}while (!valorValido);
-	 		
-	 		return valor;
-	 	}
-	
-	
+
+
+
 	
 	
 		//int cantidadCartas = 0;
