@@ -151,11 +151,18 @@ public class Juego {
 
 			nombreMazo = obtenerNombre();//"minions.txt";
 			
-			if (!nombreMazo.equals("minions") && !nombreMazo.equals("minions") && !nombreMazo.equals("Mix2") && !nombreMazo.equals("Mix1")) {
+			if (!nombreMazo.equals("minions") && !nombreMazo.equals("transformers") && !nombreMazo.equals("Mix2") && !nombreMazo.equals("Mix1")) {
 				System.out.println("Mazo no encontrado: ");
+				System.out.println("Los mazos disponibles son: ");
+				System.out.println("minions");
+				System.out.println("transformers");
+				System.out.println("Mix1");
+				System.out.println("Mix2");
+
+
 				valido = false;
 			}
-			else if (nombreMazo.equals("minions") || nombreMazo.equals("minions") || nombreMazo.equals("Mix2") || nombreMazo.equals("Mix1")){
+			else if (nombreMazo.equals("minions") || nombreMazo.equals("transformers") || nombreMazo.equals("Mix2") || nombreMazo.equals("Mix1")){
 				valido = true;
 			}
 
