@@ -1,0 +1,50 @@
+Card_49,Altura=8.41|Peso=12055.85|Fuerza=604730.6|Peleas Ganadas=617|Velocidad=95.51
+Card_35,Valentía=1|Liderazgo=17|Ternura=94
+Card_50,Altura=9.66|Peso=1465.29|Fuerza=1225212.72|Peleas Ganadas=284|Velocidad=292.44
+Card_15,Valentía=3|Liderazgo=8|Ternura=42
+Card_16,Valentía=8|Liderazgo=53|Ternura=32
+Card_31,Valentía=3|Liderazgo=75|Ternura=85
+Card_48,Altura=8.75|Peso=3299.48|Fuerza=834720.53|Peleas Ganadas=776|Velocidad=109.13
+Card_22,Valentía=2|Liderazgo=79|Ternura=59
+Card_10,Valentía=2|Liderazgo=80|Ternura=52
+Card_7,Valentía=4|Liderazgo=65|Ternura=90
+Card_20,Valentía=5|Liderazgo=38|Ternura=42
+Card_32,Valentía=3|Liderazgo=14|Ternura=54
+Card_41,Valentía=5|Liderazgo=99|Ternura=59
+Card_9,Valentía=5|Liderazgo=75|Ternura=55
+Card_5,Valentía=2|Liderazgo=66|Ternura=60
+Card_43,Valentía=3|Liderazgo=63|Ternura=3
+Card_38,Valentía=1|Liderazgo=42|Ternura=52
+Card_33,Valentía=1|Liderazgo=2|Ternura=95
+Card_1,Valentía=7|Liderazgo=93|Ternura=80
+Card_26,Valentía=8|Liderazgo=68|Ternura=91
+Card_14,Valentía=6|Liderazgo=59|Ternura=64
+Card_30,Valentía=2|Liderazgo=99|Ternura=5
+Card_47,Altura=9.6|Peso=6970.05|Fuerza=519092.25|Peleas Ganadas=348|Velocidad=169.82
+Card_25,Valentía=5|Liderazgo=66|Ternura=59
+Card_2,Valentía=2|Liderazgo=76|Ternura=35
+Card_24,Valentía=6|Liderazgo=23|Ternura=46
+Card_27,Valentía=4|Liderazgo=6|Ternura=37
+Card_29,Valentía=6|Liderazgo=46|Ternura=5
+Card_17,Valentía=5|Liderazgo=8|Ternura=57
+Card_11,Valentía=1|Liderazgo=33|Ternura=85
+Card_12,Valentía=7|Liderazgo=21|Ternura=86
+Card_8,Valentía=6|Liderazgo=1|Ternura=52
+Card_39,Valentía=5|Liderazgo=45|Ternura=30
+Card_40,Valentía=3|Liderazgo=73|Ternura=22
+Card_45,Valentía=4|Liderazgo=39|Ternura=68
+Card_18,Valentía=1|Liderazgo=28|Ternura=98
+Card_34,Valentía=9|Liderazgo=42|Ternura=91
+Card_3,Valentía=3|Liderazgo=41|Ternura=82
+Card_4,Valentía=8|Liderazgo=44|Ternura=55
+Card_44,Valentía=4|Liderazgo=36|Ternura=87
+Card_13,Valentía=1|Liderazgo=32|Ternura=36
+Card_42,Valentía=7|Liderazgo=37|Ternura=34
+Card_37,Valentía=2|Liderazgo=33|Ternura=37
+Card_23,Valentía=2|Liderazgo=3|Ternura=48
+Card_46,Altura=8.73|Peso=5664.12|Fuerza=1315539.08|Peleas Ganadas=997|Velocidad=371.04
+Card_28,Valentía=6|Liderazgo=93|Ternura=15
+Card_21,Valentía=2|Liderazgo=34|Ternura=58
+Card_6,Valentía=3|Liderazgo=98|Ternura=25
+Card_19,Valentía=2|Liderazgo=42|Ternura=46
+Card_36,Valentía=1|Liderazgo=20|Ternura=93

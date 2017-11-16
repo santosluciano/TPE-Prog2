@@ -1,3 +1,4 @@
+package CartasJuego;
 
 public class JuegoTurnos extends JuegoCartas{
 	private int cantTurnos;

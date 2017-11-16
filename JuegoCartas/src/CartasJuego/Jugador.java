@@ -1,3 +1,4 @@
+package CartasJuego;
 
 public class Jugador {
 	private String nombre;

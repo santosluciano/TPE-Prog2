@@ -1,3 +1,4 @@
+package CartasJuego;
 import java.util.*;
 
 public class Carta {
@@ -30,7 +31,7 @@ public class Carta {
 		return clave;
 	}//verificar si esta bien hecho
 	
-	protected void addAtributo(String nombre, double valor) {
+	public void addAtributo(String nombre, double valor) {
 		this.atributos.put(nombre, valor);
 	}
 

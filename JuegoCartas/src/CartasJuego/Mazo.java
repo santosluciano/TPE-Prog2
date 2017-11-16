@@ -1,4 +1,7 @@
+package CartasJuego;
 import java.util.*;
+
+import FiltrosCartas.Filtro;
 public class Mazo {
 	private final int PRIMERA = 0;
 	private final int ESPAR = 2;

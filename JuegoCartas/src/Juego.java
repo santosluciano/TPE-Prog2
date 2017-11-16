@@ -1,7 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-
+import CartasJuego.*;
+import FiltrosCartas.*;
 
 
 public class Juego { 
@@ -11,7 +12,6 @@ public class Juego {
 
 		List <Mazo> mazos = new ArrayList<Mazo>(); 
 		int opcion;
-		int mazoSeleccionado;
 		String nombreJ1;
 		String nombreJ2;
 		String volverMenu = "";

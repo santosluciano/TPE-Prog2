@@ -1,3 +1,5 @@
+package FiltrosCartas;
+import CartasJuego.Carta;
 
 public interface Filtro {
 
