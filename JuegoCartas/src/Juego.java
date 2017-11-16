@@ -10,13 +10,14 @@ public class Juego {
 
 	public static void main(String[] args) {
 
+
 		List <Mazo> mazos = new ArrayList<Mazo>(); 
 		int opcion;
 		String nombreJ1;
 		String nombreJ2;
 		String volverMenu = "";
 		Mazo mazo;
-     	JuegoCartas partida;
+     	JuegoCartas partida;     	
      	
      	do {
 			do {
@@ -35,7 +36,6 @@ public class Juego {
 				
 			switch (opcion) {
 			case 1:
-					if (mazos.size()>0) {
 						System.out.println ("¿¿Con que mazo quieres jugar??");
 						mazo = getMazo(mazos);
 						System.out.println ("ingrese Nombre de los jugadores");
@@ -45,9 +45,6 @@ public class Juego {
 						nombreJ2 = obtenerNombre();
 						partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
 						partida.jugar();
-					}else {
-						System.out.println("No hay mazos cargados");
-					}
 				break;
 			case 2:
 				System.out.println ("¿¿Con que mazo quieres jugar??");
@@ -135,8 +132,8 @@ public class Juego {
 
 	public static List<Mazo> cargarMazo() {
 		List <Mazo> mazos = new ArrayList<Mazo>();
-		//String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas"; //computadora lucho
-		String carpeta = "C://Cartas/"; // coputadora agustin
+		String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas"; //computadora lucho
+		//String carpeta = "C://Cartas/"; // coputadora agustin
 		String nombreMazo="";
 		boolean valido=true;;
 		do {
