@@ -29,7 +29,7 @@ public class Carta {
 	
 		}
 		return clave;
-	}//verificar si esta bien hecho
+	}
 	
 	public void addAtributo(String nombre, double valor) {
 		this.atributos.put(nombre, valor);
@@ -69,7 +69,7 @@ public class Carta {
 		return this.atributos.size();
 	}
 	
-	public String toString(){ // modificar
+	public String toString(){ 
 		String datosCarta = "";		
 		datosCarta += this.getNombre() + "\n";
 		
