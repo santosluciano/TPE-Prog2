@@ -29,6 +29,7 @@ public class JuegoCartas {
 				System.out.println("Empataron");
 			}else {
 				jugadorGanador = this.getGanador().getNombre();
+				System.out.println("----------------------------------");
 				System.out.println("La partida la gano "+ jugadorGanador);
 			}
 		}else {

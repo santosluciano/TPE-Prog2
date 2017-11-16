@@ -27,19 +27,27 @@ public class Juego {
 				System.out.println ("5.Ver cartas de un mazo");
 				System.out.println ("6.Salir del juego");
 				opcion = obtnerValor();
-			}while(opcion<1||opcion>5); 
-	
+				if (((opcion==1)||(opcion==2)||(opcion==4)||(opcion==5))&&(mazos.size()==0)) {
+					System.out.println ("Debe cargar un mazo");
+					opcion = 3;
+				}	
+			}while(opcion<1||opcion>6); 
+				
 			switch (opcion) {
-			case 1: 
-				System.out.println ("¿¿Con que mazo quieres jugar??");
-				mazo = getMazo(mazos);
-				System.out.println ("ingrese Nombre de los jugadores");
-				System.out.print ("Nombre de Jugador 1: ");
-				nombreJ1 = obtenerNombre();
-				System.out.print ("Nombre de Jugador 2: ");
-				nombreJ2 = obtenerNombre();
-				partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
-	     		partida.jugar();
+			case 1:
+					if (mazos.size()>0) {
+						System.out.println ("¿¿Con que mazo quieres jugar??");
+						mazo = getMazo(mazos);
+						System.out.println ("ingrese Nombre de los jugadores");
+						System.out.print ("Nombre de Jugador 1: ");
+						nombreJ1 = obtenerNombre();
+						System.out.print ("Nombre de Jugador 2: ");
+						nombreJ2 = obtenerNombre();
+						partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
+						partida.jugar();
+					}else {
+						System.out.println("No hay mazos cargados");
+					}
 				break;
 			case 2:
 				System.out.println ("¿¿Con que mazo quieres jugar??");
@@ -51,8 +59,8 @@ public class Juego {
 				nombreJ2 = obtenerNombre();
 	        	System.out.println ("Cuantos turnos va a durar la partida?");
 	     		opcion = obtnerValor();
-	     		partida = new JuegoTurnos(nombreJ1,nombreJ2,mazo,opcion);
-	     		partida.jugar();;
+	    		partida = new JuegoTurnos(nombreJ1,nombreJ2,mazo,opcion);
+	     		partida.jugar();
 	     		break;
 			case 3:
 				mazos.addAll(cargarMazo());	
@@ -61,6 +69,7 @@ public class Juego {
 						mazos.remove(mazoIterado);
 					}
 				}
+				System.out.println ("Mazo cargado con exito!!");
 				break;
 			case 4:
 				int valor = 0;
@@ -101,6 +110,7 @@ public class Juego {
 				break;
 			case 6:
 				System.out.println ("Gracias por jugar");
+				System.exit(0);
 				break;
 			};
 				volverMenu = volverMenu();
@@ -148,13 +158,10 @@ public class Juego {
 		
 		String mazoC1 = nombreMazo+".txt";
 		LectorCartas lector = new LectorCartas();
-		Vector<Hashtable> mazo1 = lector.leerMazo(carpeta, mazoC1);
-		//String[] nombreMazo = mazoC1.split(".");
-		// System.out.println(mazoC1);
+		Vector<Hashtable> mazo1 = lector.leerMazo(carpeta, mazoC1);	
 		Mazo nuevoMazo = new Mazo();
 		nuevoMazo.setNombreMazo(nombreMazo);
 		mazos.add(nuevoMazo);		
-		System.out.println("MAZO: " +mazoC1  +" en: " + carpeta);
 		for (int i = 0; i< mazo1.size(); i++){
 			Hashtable carta = mazo1.elementAt(i);
 			Carta nuevaCarta = new Carta();
