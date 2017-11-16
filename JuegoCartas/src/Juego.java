@@ -36,15 +36,15 @@ public class Juego {
 				
 			switch (opcion) {
 			case 1:
-						System.out.println ("¿¿Con que mazo quieres jugar??");
-						mazo = getMazo(mazos);
-						System.out.println ("ingrese Nombre de los jugadores");
-						System.out.print ("Nombre de Jugador 1: ");
-						nombreJ1 = obtenerNombre();
-						System.out.print ("Nombre de Jugador 2: ");
-						nombreJ2 = obtenerNombre();
-						partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
-						partida.jugar();
+				System.out.println ("¿¿Con que mazo quieres jugar??");
+				mazo = getMazo(mazos);
+				System.out.println ("ingrese Nombre de los jugadores");
+				System.out.print ("Nombre de Jugador 1: ");
+				nombreJ1 = obtenerNombre();
+				System.out.print ("Nombre de Jugador 2: ");
+				nombreJ2 = obtenerNombre();
+				partida = new JuegoCartas(nombreJ1,nombreJ2,mazo);
+				partida.jugar();
 				break;
 			case 2:
 				System.out.println ("¿¿Con que mazo quieres jugar??");
@@ -132,8 +132,8 @@ public class Juego {
 
 	public static List<Mazo> cargarMazo() {
 		List <Mazo> mazos = new ArrayList<Mazo>();
-		String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas"; //computadora lucho
-		//String carpeta = "C://Cartas/"; // coputadora agustin
+		//String carpeta = "/home/lucho/Documentos/TPE-Prog2/JuegoCartas/cartas"; //computadora lucho
+		String carpeta = "C://Cartas/"; // coputadora agustin
 		String nombreMazo="";
 		boolean valido=true;;
 		do {
