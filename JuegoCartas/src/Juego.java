@@ -86,20 +86,27 @@ public class Juego {
 					System.out.println ("¿Que filtro seleccionas?");
 					filtro = getFiltroSimple(mazo);
 					mazoFiltrado = mazo.getCartas(filtro);
-					mazoFiltrado.setNombreMazo(mazo.getNombreMazo()+ "-Con filtro Simple");
+					if (mazoFiltrado.vacio()){
+						System.out.println("El filtro no se puede ejecutar");
+					}
+					else{
+						mazoFiltrado.setNombreMazo(mazo.getNombreMazo()+ "-Con filtro Simple");
+						mazos.add(mazoFiltrado);
+					}
 				}
 				else{
 					filtro = getFiltroCompuesto(mazo);
 					mazoFiltrado = mazo.getCartas(filtro);
-					mazoFiltrado.setNombreMazo(mazo.getNombreMazo()+ "-Con filtro Compuesto");
+					if (mazoFiltrado.vacio()){
+						System.out.println("El filtro no se puede ejecutar");
+					}
+					else{
+						mazoFiltrado.setNombreMazo(mazo.getNombreMazo()+ "-Con filtro Compuesto");
+						mazos.add(mazoFiltrado);
+					}
 				}
 				
-				if (mazoFiltrado.vacio()){
-					System.out.println("El filtro no se puede ejecutar");
-				}
-				else{
-					mazos.add(mazoFiltrado);
-				}
+
 				break;
 			case 5:
 				mazo = getMazo(mazos);
